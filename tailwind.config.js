@@ -28,6 +28,7 @@ module.exports = {
         lightGrey: "#D4D4D8",
         white: "#FAFAFA",
         background: "#F3F4F6",
+        textColor: "#1e1e1e",
       },
       fontSize: {
         xs: ["12px", { lineHeight: "1" }],

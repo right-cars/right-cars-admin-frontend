@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Work_Sans } from "next/font/google";
 import "./globals.css";
+import Header from "./components/modules/Header/Header";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -29,11 +30,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.className} ${geistMono.className} ${workSans.className}`}>
-        <main>
-           {children}
-        </main>
+    <html
+      lang="en"
+      className={`${geistSans.className} ${geistMono.className} ${workSans.className}`}
+    >
+      <body className="bg-background text-textColor">
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
