@@ -2,6 +2,7 @@ import { Tab, Tabs } from "@nextui-org/react";
 import { temporaryData } from "./temporaryData";
 import CarCard from "@/components/views/Home/CarCard";
 import { useState } from "react";
+import CustomPagination from "./Pagination";
 
 const tabs = [
   { name: "ALL", key: "all" },
@@ -12,6 +13,9 @@ const tabs = [
 
 export default function StatusTabs() {
   const [selectedKey, setSelectedKey] = useState<string | number>("all");
+    const [currentPage, setCurrentPage] = useState<number>(1);
+  const itemsPerPage = 8;
+  
   const filteredCars = temporaryData.filter((car) => {
     switch (selectedKey) {
       case "all":
@@ -27,10 +31,22 @@ export default function StatusTabs() {
     }
   });
 
+  const totalPages = Math.ceil(filteredCars.length / itemsPerPage);
+
+    const paginatedCars = filteredCars.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage
+    );
+  
+   const handlePageChange = (page: number) => setCurrentPage(page);
+
   return (
     <Tabs
       selectedKey={selectedKey}
-      onSelectionChange={(key) => setSelectedKey(key)}
+     onSelectionChange={(key) => {
+        setSelectedKey(key);
+        setCurrentPage(1);
+      }}
       aria-label="Status Tabs"
       className="w-full"
       radius="none"
@@ -51,7 +67,7 @@ export default function StatusTabs() {
           style={{ fontWeight: "bold" }}
         >
           <ul className="grid grid-cols-4 gap-4 mt-14 mb-20">
-             {filteredCars.map((car) => (
+             {paginatedCars.map((car) => (
             <CarCard
               key={car.id}
               id={car.id}
@@ -62,6 +78,14 @@ export default function StatusTabs() {
             />
           ))}
           </ul>
+
+          <div className="flex justify-center mt-6">
+            <CustomPagination
+              total={totalPages}
+              initialPage={currentPage}
+              onChange={handlePageChange}
+            />
+          </div>
          
         </Tab>
       ))}
