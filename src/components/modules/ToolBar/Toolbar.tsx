@@ -12,7 +12,7 @@ export default function Toolbar({ title, variant = "manage" }: Props) {
   const titleText =
     variant === "edit" ? "EDIT" : variant === "add" ? "ADD A" : "MANAGE";
   return (
-    <div className="py-16 mb-14">
+    <div className="py-16">
       <GoBackBtn />
 
       <div className="flex justify-between items-center">
@@ -20,12 +20,13 @@ export default function Toolbar({ title, variant = "manage" }: Props) {
           {titleText} <span className="text-blue">{title}</span>
         </h1>
 
-        {/* Пошук, сортування, фільтри */}
-        <div className="flex items-center gap-4">
-          <SearchInput />
-          <SortDropdown />
-          <VehicleSelect />
-        </div>
+        {variant === "manage" && (
+          <div className="flex items-center gap-4">
+            <SearchInput />
+            <SortDropdown />
+            <VehicleSelect />
+          </div>
+        )}
       </div>
     </div>
   );

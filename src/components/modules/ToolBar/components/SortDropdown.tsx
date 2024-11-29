@@ -34,13 +34,13 @@ export default function SortDropdown() {
         </Button>
       </DropdownTrigger>
       <DropdownMenu
-        aria-label="Vehicle Options"
+        aria-label="Sort Options"
         variant="flat"
         disallowEmptySelection
         selectionMode="single"
         selectedKeys={selectedKeys}
         onSelectionChange={(keys) =>
-          setSelectedKeys(keys as Set<"all" | string>)
+          setSelectedKeys(keys as Set<"" | string>)
         }
       >
         <DropdownItem key="price">BY PRICE</DropdownItem>
