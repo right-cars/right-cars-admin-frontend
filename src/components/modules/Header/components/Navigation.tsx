@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 const navItems = [
   {
     img: <AutoSvg />,
-    href: "/vehicles",
+    href: "/",
     text: "Vehicles",
   },
   {
