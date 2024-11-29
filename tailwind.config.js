@@ -24,11 +24,20 @@ module.exports = {
         opacity20Blue: "#006FEE33",
         opacity5Blue: "#006FEE0D",
         black: "#18181B",
+        pureBlack: "#000",
         grey: "#52525B",
         lightGrey: "#D4D4D8",
         white: "#FAFAFA",
         background: "#F3F4F6",
         textColor: "#1e1e1e",
+        pureWhite: "#fff",
+      },
+      boxShadow: {
+        custom:
+          "0px 4px 6px -1px rgba(0, 0, 0, 0.10), 0px 2px 4px -2px rgba(0, 0, 0, 0.10);",
+      },
+      fontFamily: {
+        metrophobic: ["Metrophobic", "sans-serif"],
       },
       fontSize: {
         xs: ["12px", { lineHeight: "1" }],
