@@ -9,6 +9,7 @@ import {
   TableCell,
   getKeyValue,
   Pagination,
+  Button,
 } from "@nextui-org/react";
 
 interface User {
@@ -28,6 +29,22 @@ interface Users {
   data: User[];
 }
 
+const getStatusColor = (status: string): string => {
+  const normalizedStatus = status.trim().toLowerCase();
+  console.log(`Normalized Status: ${normalizedStatus}`);
+  switch (normalizedStatus) {
+    case "verified":
+      return "text-green-600";
+    case "in progress":
+      return "text-blue";
+    case "no documents":
+      return "text-orange-500";
+    default:
+      return "text-blue-500";
+  }
+};
+
+
 export default function UsersTable({ data }: Users) {
   const [page, setPage] = useState(1);
   const rowsPerPage = 9;
@@ -42,9 +59,13 @@ export default function UsersTable({ data }: Users) {
   }, [page, data]);
 
   return (
-      <Table
-          classNames={{thead:'custom-table'}}
-          color="primary"
+    <Table
+      className="custom-table"
+      classNames={{
+        thead: "custom-thead",
+        tr: "bg-pureWhite",
+      }}
+      color="primary"
       aria-label="Example table with client async pagination"
       bottomContent={
         <div className="flex w-full justify-center">
@@ -62,17 +83,36 @@ export default function UsersTable({ data }: Users) {
       <TableHeader className="table-head">
         <TableColumn key="name">Name</TableColumn>
         <TableColumn key="addingDate">Date of adding</TableColumn>
-        <TableColumn key="status">status</TableColumn>
-        <TableColumn key="mail">email</TableColumn>
-        <TableColumn key="phone">phone number</TableColumn>
-        <TableColumn key="deposit">deposit</TableColumn>
+        <TableColumn key="status">Status</TableColumn>
+        <TableColumn key="mail">Email</TableColumn>
+        <TableColumn key="phone">Phone number</TableColumn>
+        <TableColumn key="deposit">Deposit</TableColumn>
+        <TableColumn key="details"> </TableColumn>
       </TableHeader>
       <TableBody items={items ?? []}>
         {(item) => (
           <TableRow key={item?.id}>
-            {(columnKey) => (
-              <TableCell>{getKeyValue(item, columnKey)}</TableCell>
-            )}
+                      {(columnKey) => {
+                          if (columnKey === "status") {
+                return (
+                  <TableCell>
+                    <span className={getStatusColor(item?.status)}>
+                      {item?.status}
+                    </span>
+                  </TableCell>
+                );
+              }
+              if (columnKey === "details") {
+                return (
+                  <TableCell>
+                    <Button radius="full" color="primary" variant="flat">
+                      view profile
+                    </Button>
+                  </TableCell>
+                );
+              }
+              return <TableCell>{getKeyValue(item, columnKey)}</TableCell>;
+            }}
           </TableRow>
         )}
       </TableBody>
