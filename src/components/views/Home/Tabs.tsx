@@ -1,3 +1,4 @@
+"use client"
 import { Tab, Tabs } from "@nextui-org/react";
 import { temporaryData } from "./temporaryData";
 import CarCard from "@/components/views/Home/CarCard";

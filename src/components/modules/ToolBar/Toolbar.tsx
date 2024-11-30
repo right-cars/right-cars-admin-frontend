@@ -1,3 +1,4 @@
+"use client"
 import GoBackBtn from "@/components/modules/ToolBar/components/GoBackBtn";
 import SearchInput from "./components/SearchInput";
 import VehicleSelect from "./components/VehicleDropdown";
@@ -10,7 +11,7 @@ interface Props {
 
 export default function Toolbar({ title, variant = "manage" }: Props) {
   const titleText =
-    variant === "edit" ? "EDIT" : variant === "add" ? "ADD A" : "MANAGE";
+    variant === "edit" ? "EDIT:" : variant === "add" ? "ADD A" : "MANAGE";
   return (
     <div className="py-16">
       <GoBackBtn />
