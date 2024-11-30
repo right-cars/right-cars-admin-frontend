@@ -1,7 +1,7 @@
 "use client"
 import Container from "@/components/common/Container";
 import Toolbar from "@/components/modules/ToolBar/Toolbar";
-import AddVehicleFormBlock from "@/components/views/AddVehicleFormBlock/AddVehicleFormBlock";
+import VehicleFormBlock from "@/components/modules/VehicleFormBlock/VehicleFormBlock";
 import { BlockData } from "@/types/types";
 import { temporary } from "../temporary";
 
@@ -14,7 +14,7 @@ export default function EditVehicle() {
   return (
    <Container>
       <Toolbar title="Volkswagen Polo Hatch" variant="edit" />
-         <AddVehicleFormBlock initialData={temporary} onSave={handleSave} />
+         <VehicleFormBlock variant="edit" initialData={temporary} onSave={handleSave} />
     </Container>
   );
 }

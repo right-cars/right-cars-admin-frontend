@@ -1,5 +1,5 @@
 export interface InputProps {
-  label: string;
+  label?: string;
   value: string;
   onChange: (value: string) => void;
 }
@@ -13,7 +13,8 @@ export interface BlockData {
   }[];
 }
 
-export interface AddVehicleFormBlockProps {
+export interface VehicleFormBlockProps {
+  variant: "add" | "edit";
   initialData: BlockData[];
   onSave: (data: BlockData[]) => void;
 }

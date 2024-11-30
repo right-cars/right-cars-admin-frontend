@@ -22,17 +22,19 @@ export default function InputsBlock({
   onInputChange,
 }: InputsBlockProps) {
   return (
-    <div className="p-6 bg-white rounded-lg shadow-md mb-6">
-      <h2 className="text-lg font-bold mb-4">{title}</h2>
-      <div className="grid grid-cols-2 gap-4">
-        {inputs.map((input) => (
-          <InfoInput
-            key={input.id}
-            label={input.label}
-            value={input.value}
-            onChange={(newValue) => onInputChange(title, input.id, newValue)}
-          />
-        ))}
+    <div>
+      <h2 className="text-md font-bold mb-14 text-black uppercase">{title}</h2>
+      <div className="p-8 bg-white rounded-lg shadow-custom ">
+        <div className="grid grid-cols-2 gap-4">
+          {inputs.map((input) => (
+            <InfoInput
+              key={input.id}
+              label={input.label}
+              value={input.value}
+              onChange={(newValue) => onInputChange(title, input.id, newValue)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

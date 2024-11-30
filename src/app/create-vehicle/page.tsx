@@ -2,7 +2,7 @@
 
 import Container from "@/components/common/Container";
 import Toolbar from "@/components/modules/ToolBar/Toolbar";
-import AddVehicleFormBlock from "@/components/views/AddVehicleFormBlock/AddVehicleFormBlock";
+import VehicleFormBlock from "@/components/modules/VehicleFormBlock/VehicleFormBlock";
 import { initialData } from "./initialData";
 import { BlockData } from "@/types/types";
 
@@ -14,7 +14,7 @@ export default function CreateVehicle() {
   return (
    <Container>
       <Toolbar title="new vehicle" variant="add" />
-      <AddVehicleFormBlock initialData={initialData} onSave={handleSave} />
+      <VehicleFormBlock variant="add" initialData={initialData} onSave={handleSave} />
     </Container>
   );
 }

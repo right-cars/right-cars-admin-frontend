@@ -1,12 +1,14 @@
 import InputsBlock from "@/components/common/InputsBlock/InputsBlock";
-import { AddVehicleFormBlockProps, BlockData } from "@/types/types";
+import { VehicleFormBlockProps, BlockData } from "@/types/types";
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
+import VinCode from "./VinCode";
 
-export default function AddVehicleFormBlock({
+export default function VehicleFormBlock({
+  variant,
   initialData,
   onSave,
-}: AddVehicleFormBlockProps) {
+}: VehicleFormBlockProps) {
   const [blocks, setBlocks] = useState<BlockData[]>(initialData);
 
   const handleInputChange = (
@@ -28,13 +30,21 @@ export default function AddVehicleFormBlock({
     );
   };
 
+  //  const handleSave = () => {
+  //     const formData: VehicleFormData = { vinCode, blocks };
+  //    onSave(formData);
+
+  //   };
+
   const handleSave = () => {
     onSave(blocks);
   };
 
   return (
     <div>
-      {blocks.map((block) => (
+      {variant === "add" && <VinCode />}
+      <div className="flex flex-col gap-20">
+         {blocks.map((block) => (
         <InputsBlock
           key={block.title}
           title={block.title}
@@ -42,6 +52,8 @@ export default function AddVehicleFormBlock({
           onInputChange={handleInputChange}
         />
       ))}
+      </div>
+     
       <Button onClick={handleSave}>Save</Button>
     </div>
   );
