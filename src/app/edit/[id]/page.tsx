@@ -6,15 +6,17 @@ import { BlockData } from "@/types/types";
 import { temporary } from "../temporary";
 import { tepmoraryImgs } from "../temporaryImgs";
 
+const temporaryVideoUrl = "https://youtu.be/D9G1VOjN_84?si=GIZHe07Ugzx-u9AM";
+
 export default function EditVehicle() {
-  const handleSave = (data: { blocks: BlockData[]; files: (File | null)[] }) => {
+  const handleSave = (data: { blocks: BlockData[]; files: (File | null)[],video: string | null  }) => {
     console.log("Saved Data:", data);
   };
   
   return (
    <Container>
       <Toolbar title="Volkswagen Polo Hatch" variant="edit" />
-         <VehicleFormBlock variant="edit"   initialImages={tepmoraryImgs} initialData={temporary} onSave={handleSave} />
+         <VehicleFormBlock variant="edit"   initialImages={tepmoraryImgs} initialData={temporary} onSave={handleSave}  initialVideoUrl={temporaryVideoUrl}  />
     </Container>
   );
 }

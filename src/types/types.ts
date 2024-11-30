@@ -9,7 +9,7 @@ export interface BlockData {
   inputs: {
     id: string;
     label: string;
-      value: string;
+    value: string;
     isFileInput?: boolean;
   }[];
 }
@@ -17,6 +17,11 @@ export interface BlockData {
 export interface VehicleFormBlockProps {
   variant: "add" | "edit";
   initialData: BlockData[];
-    onSave: (data: { blocks: BlockData[]; files: (File | null)[] }) => void;
-    initialImages?:(File | string | null)[]
+  onSave: (data: {
+    blocks: BlockData[];
+    files: (File | null)[];
+    video: string | null;
+  }) => void;
+  initialImages?: (File | string | null)[];
+  initialVideoUrl?: string;
 }

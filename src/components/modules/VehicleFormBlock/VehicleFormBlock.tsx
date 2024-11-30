@@ -1,19 +1,21 @@
 import InputsBlock from "@/components/common/InputsBlock/InputsBlock";
 import { VehicleFormBlockProps, BlockData } from "@/types/types";
-import { Button } from "@nextui-org/react";
 import { useState } from "react";
 import VinCode from "./VinCode";
 import ImageBlock from "@/components/common/UploadImagesBlock/ImageBlock";
 import VideoBlock from "@/components/common/VideoBlock/VideoBlock";
+import SaveOrCancel from "@/components/common/Buttons/SaveOrCancel";
 
 export default function VehicleFormBlock({
   variant,
   initialData,
   onSave,
-  initialImages
+  initialImages,
+   initialVideoUrl
 }: VehicleFormBlockProps) {
   const [blocks, setBlocks] = useState<BlockData[]>(initialData);
   const [files, setFiles] = useState<(File | null)[]>([]);
+  const [videoUrl, setVideoUrl] = useState<string | null>(null);
 
   const handleInputChange = (
     blockTitle: string,
@@ -51,15 +53,21 @@ export default function VehicleFormBlock({
     const dataToSave = {
       blocks,
       files,
+      video: videoUrl,
     };
     onSave(dataToSave);
 
     setBlocks(initialData);
     setFiles([]);
+    setVideoUrl(null);
+  };
+
+   const handleVideoUrlChange = (url: string | null) => {
+    setVideoUrl(url); 
   };
 
   return (
-    <div>
+    <div className="pb-[120px]">
       {variant === "add" && <VinCode />}
       <div className="flex flex-col gap-20">
         {blocks.map((block) => (
@@ -71,10 +79,10 @@ export default function VehicleFormBlock({
             onFileChange={handleFileChange}
           />
         ))}
-      <ImageBlock initialImages={initialImages}/>
-      <VideoBlock />
+        <ImageBlock initialImages={initialImages} />
+       <VideoBlock onSaveVideoUrl={handleVideoUrlChange} initialVideoUrl={initialVideoUrl} />
       </div>
-      <Button onClick={handleSave}>Save</Button>
+      <SaveOrCancel variant="publish" onSave={handleSave} />
     </div>
   );
 }
