@@ -17,5 +17,6 @@ export interface BlockData {
 export interface VehicleFormBlockProps {
   variant: "add" | "edit";
   initialData: BlockData[];
- onSave: (data: { blocks: BlockData[]; files: (File | null)[] }) => void;
+    onSave: (data: { blocks: BlockData[]; files: (File | null)[] }) => void;
+    initialImages?:(File | string | null)[]
 }

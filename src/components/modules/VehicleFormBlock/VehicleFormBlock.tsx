@@ -3,11 +3,14 @@ import { VehicleFormBlockProps, BlockData } from "@/types/types";
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
 import VinCode from "./VinCode";
+import ImageBlock from "@/components/common/UploadImagesBlock/ImageBlock";
+import VideoBlock from "@/components/common/VideoBlock/VideoBlock";
 
 export default function VehicleFormBlock({
   variant,
   initialData,
   onSave,
+  initialImages
 }: VehicleFormBlockProps) {
   const [blocks, setBlocks] = useState<BlockData[]>(initialData);
   const [files, setFiles] = useState<(File | null)[]>([]);
@@ -68,8 +71,9 @@ export default function VehicleFormBlock({
             onFileChange={handleFileChange}
           />
         ))}
+      <ImageBlock initialImages={initialImages}/>
+      <VideoBlock />
       </div>
-
       <Button onClick={handleSave}>Save</Button>
     </div>
   );

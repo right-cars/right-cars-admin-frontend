@@ -4,6 +4,7 @@ import Toolbar from "@/components/modules/ToolBar/Toolbar";
 import VehicleFormBlock from "@/components/modules/VehicleFormBlock/VehicleFormBlock";
 import { BlockData } from "@/types/types";
 import { temporary } from "../temporary";
+import { tepmoraryImgs } from "../temporaryImgs";
 
 export default function EditVehicle() {
   const handleSave = (data: { blocks: BlockData[]; files: (File | null)[] }) => {
@@ -13,7 +14,7 @@ export default function EditVehicle() {
   return (
    <Container>
       <Toolbar title="Volkswagen Polo Hatch" variant="edit" />
-         <VehicleFormBlock variant="edit" initialData={temporary} onSave={handleSave} />
+         <VehicleFormBlock variant="edit"   initialImages={tepmoraryImgs} initialData={temporary} onSave={handleSave} />
     </Container>
   );
 }

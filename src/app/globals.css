@@ -58,3 +58,7 @@ a {
 .navbar header ul {
   flex-grow: 0 !important;
 }
+
+.bordered-button {
+  border: 2px solid;
+}

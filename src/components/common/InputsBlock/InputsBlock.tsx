@@ -16,7 +16,7 @@ interface InputsBlockProps {
     inputId: string,
     newValue: string
   ) => void;
-  onFileChange: (inputId: string, file: File | null) => void; // Додаємо обробку зміни файлів
+  onFileChange: (inputId: string, file: File | null) => void;
 }
 
 export default function InputsBlock({
@@ -36,7 +36,7 @@ export default function InputsBlock({
                 key={input.id}
                 label={input.label}
                 onFileChange={(file) => {
-                  onFileChange(input.id, file); // Передаємо файл до батьківського компонента
+                  onFileChange(input.id, file);
                 }}
               />
             ) : (
