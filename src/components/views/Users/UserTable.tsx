@@ -11,6 +11,7 @@ import {
   Pagination,
   Button,
 } from "@nextui-org/react";
+import Link from "next/link";
 
 interface User {
   id: number;
@@ -43,7 +44,6 @@ const getStatusColor = (status: string): string => {
       return "text-blue-500";
   }
 };
-
 
 export default function UsersTable({ data }: Users) {
   const [page, setPage] = useState(1);
@@ -92,8 +92,8 @@ export default function UsersTable({ data }: Users) {
       <TableBody items={items ?? []}>
         {(item) => (
           <TableRow key={item?.id}>
-                      {(columnKey) => {
-                          if (columnKey === "status") {
+            {(columnKey) => {
+              if (columnKey === "status") {
                 return (
                   <TableCell>
                     <span className={getStatusColor(item?.status)}>
@@ -105,7 +105,13 @@ export default function UsersTable({ data }: Users) {
               if (columnKey === "details") {
                 return (
                   <TableCell>
-                    <Button radius="full" color="primary" variant="flat">
+                    <Button
+                      as={Link}
+                      href={`/users/${item.id}`}
+                      radius="full"
+                      color="primary"
+                      variant="flat"
+                    >
                       view profile
                     </Button>
                   </TableCell>
