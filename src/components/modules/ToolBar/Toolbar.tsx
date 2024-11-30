@@ -1,15 +1,22 @@
-"use client"
+"use client";
 import GoBackBtn from "@/components/modules/ToolBar/components/GoBackBtn";
 import SearchInput from "./components/SearchInput";
 import VehicleSelect from "./components/VehicleDropdown";
 import SortDropdown from "./components/SortDropdown";
+import UsersDropdown from "./components/UsersDropdown";
+import UsersSortDropdown from "./components/UsersSortDropDown";
 
 interface Props {
   title: string;
   variant?: "manage" | "edit" | "add";
+  type?: "users" | "vehicles";
 }
 
-export default function Toolbar({ title, variant = "manage" }: Props) {
+export default function Toolbar({
+  title,
+  variant = "manage",
+  type = "vehicles",
+}: Props) {
   const titleText =
     variant === "edit" ? "EDIT:" : variant === "add" ? "ADD A" : "MANAGE";
   return (
@@ -24,8 +31,9 @@ export default function Toolbar({ title, variant = "manage" }: Props) {
         {variant === "manage" && (
           <div className="flex items-center gap-4">
             <SearchInput />
-            <SortDropdown />
-            <VehicleSelect />
+            {type === "vehicles" ? <SortDropdown /> : <UsersSortDropdown />}
+
+            {type === "vehicles" ? <VehicleSelect /> : <UsersDropdown />}
           </div>
         )}
       </div>

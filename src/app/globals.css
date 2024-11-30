@@ -62,3 +62,9 @@ a {
 .bordered-button {
   border: 2px solid;
 }
+
+.custom-table {
+  .bg-default-100 {
+    background-color: #006fee33;
+  }
+}

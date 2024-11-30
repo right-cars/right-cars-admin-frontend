@@ -3,7 +3,7 @@ import { Tab, Tabs } from "@nextui-org/react";
 import { temporaryData } from "./temporaryData";
 import CarCard from "@/components/views/Home/CarCard";
 import { useState } from "react";
-import CustomPagination from "./Pagination";
+import CustomPagination from "../../common/Pagination";
 
 const tabs = [
   { name: "ALL", key: "all" },
