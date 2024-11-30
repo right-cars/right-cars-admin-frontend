@@ -7,9 +7,9 @@ import { initialData } from "./initialData";
 import { BlockData } from "@/types/types";
 
 export default function CreateVehicle() {
-    const handleSave = (data:BlockData[]) => {
+  const handleSave = (data: { blocks: BlockData[]; files: (File | null)[] }) => {
     console.log("Saved Data:", data);
-    };
+  };
   
   return (
    <Container>

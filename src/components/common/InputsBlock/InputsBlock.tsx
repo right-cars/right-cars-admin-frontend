@@ -1,9 +1,11 @@
+import FileUploadInput from "./FileUploadInput";
 import InfoInput from "./InfoInput";
 
 interface InputData {
   id: string;
   label: string;
   value: string;
+  isFileInput?: boolean;
 }
 
 interface InputsBlockProps {
@@ -14,12 +16,14 @@ interface InputsBlockProps {
     inputId: string,
     newValue: string
   ) => void;
+  onFileChange: (inputId: string, file: File | null) => void; // Додаємо обробку зміни файлів
 }
 
 export default function InputsBlock({
   title,
   inputs,
   onInputChange,
+  onFileChange,
 }: InputsBlockProps) {
   return (
     <div>
@@ -27,12 +31,22 @@ export default function InputsBlock({
       <div className="p-8 bg-white rounded-lg shadow-custom ">
         <div className="grid grid-cols-2 gap-4">
           {inputs.map((input) => (
-            <InfoInput
-              key={input.id}
-              label={input.label}
-              value={input.value}
-              onChange={(newValue) => onInputChange(title, input.id, newValue)}
-            />
+            input.isFileInput ? (
+              <FileUploadInput
+                key={input.id}
+                label={input.label}
+                onFileChange={(file) => {
+                  onFileChange(input.id, file); // Передаємо файл до батьківського компонента
+                }}
+              />
+            ) : (
+              <InfoInput
+                key={input.id}
+                label={input.label}
+                value={input.value}
+                onChange={(newValue) => onInputChange(title, input.id, newValue)}
+              />
+            )
           ))}
         </div>
       </div>

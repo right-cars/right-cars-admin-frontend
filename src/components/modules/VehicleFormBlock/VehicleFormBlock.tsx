@@ -10,6 +10,7 @@ export default function VehicleFormBlock({
   onSave,
 }: VehicleFormBlockProps) {
   const [blocks, setBlocks] = useState<BlockData[]>(initialData);
+  const [files, setFiles] = useState<(File | null)[]>([]);
 
   const handleInputChange = (
     blockTitle: string,
@@ -30,30 +31,45 @@ export default function VehicleFormBlock({
     );
   };
 
-  //  const handleSave = () => {
-  //     const formData: VehicleFormData = { vinCode, blocks };
-  //    onSave(formData);
-
-  //   };
+  const handleFileChange = (inputId: string, file: File | null) => {
+    setFiles((prevFiles) => {
+      const updatedFiles = [...prevFiles];
+      const fileIndex = updatedFiles.findIndex((file) => file === null);
+      if (fileIndex >= 0) {
+        updatedFiles[fileIndex] = file;
+      } else {
+        updatedFiles.push(file);
+      }
+      return updatedFiles;
+    });
+  };
 
   const handleSave = () => {
-    onSave(blocks);
+    const dataToSave = {
+      blocks,
+      files,
+    };
+    onSave(dataToSave);
+
+    setBlocks(initialData);
+    setFiles([]);
   };
 
   return (
     <div>
       {variant === "add" && <VinCode />}
       <div className="flex flex-col gap-20">
-         {blocks.map((block) => (
-        <InputsBlock
-          key={block.title}
-          title={block.title}
-          inputs={block.inputs}
-          onInputChange={handleInputChange}
-        />
-      ))}
+        {blocks.map((block) => (
+          <InputsBlock
+            key={block.title}
+            title={block.title}
+            inputs={block.inputs}
+            onInputChange={handleInputChange}
+            onFileChange={handleFileChange}
+          />
+        ))}
       </div>
-     
+
       <Button onClick={handleSave}>Save</Button>
     </div>
   );

@@ -6,10 +6,9 @@ import { BlockData } from "@/types/types";
 import { temporary } from "../temporary";
 
 export default function EditVehicle() {
-
-    const handleSave = (data:BlockData[]) => {
-    console.log("Updated Data:", data);
-    };
+  const handleSave = (data: { blocks: BlockData[]; files: (File | null)[] }) => {
+    console.log("Saved Data:", data);
+  };
   
   return (
    <Container>

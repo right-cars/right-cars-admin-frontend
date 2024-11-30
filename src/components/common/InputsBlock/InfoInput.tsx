@@ -19,7 +19,7 @@ export default function InfoInput({
           alt="edit icon"
           width={24}
           height={24}
-          className="flex-shrink-0"
+          className="flex-shrink-0 cursor-pointer"
         />
       }
     />

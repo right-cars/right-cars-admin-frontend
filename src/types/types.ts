@@ -9,12 +9,13 @@ export interface BlockData {
   inputs: {
     id: string;
     label: string;
-    value: string;
+      value: string;
+    isFileInput?: boolean;
   }[];
 }
 
 export interface VehicleFormBlockProps {
   variant: "add" | "edit";
   initialData: BlockData[];
-  onSave: (data: BlockData[]) => void;
+ onSave: (data: { blocks: BlockData[]; files: (File | null)[] }) => void;
 }
