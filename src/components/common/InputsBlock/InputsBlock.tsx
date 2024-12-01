@@ -28,7 +28,7 @@ export default function InputsBlock({
   return (
     <div>
       <h2 className="text-md font-bold mb-14 text-black uppercase">{title}</h2>
-      <div className="p-8 bg-white rounded-lg shadow-custom ">
+      <div className="p-8 bg-pureWhite rounded-[24px] shadow-custom ">
         <div className="grid grid-cols-2 gap-4">
           {inputs.map((input) => (
             input.isFileInput ? (

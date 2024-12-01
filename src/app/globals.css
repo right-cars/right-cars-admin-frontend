@@ -64,15 +64,10 @@ a {
 }
 
 .custom-table div {
+  height: auto;
   background-color: transparent;
   padding: 0;
   box-shadow: none;
-}
-
-.custom-thead {
-  .bg-default-100 {
-    background-color: #006fee33;
-  }
 }
 
 .custom-table {

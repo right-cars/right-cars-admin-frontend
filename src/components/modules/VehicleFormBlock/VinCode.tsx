@@ -13,7 +13,7 @@ export default function VinCode() {
       <h2 className="text-md font-bold mb-14 text-black uppercase">
         Enter VIN to Add Vehicle (Optional)
       </h2>
-      <div className="p-8 bg-white rounded-lg shadow-custom mb-20">
+      <div className="p-8 bg-pureWhite rounded-[24px] shadow-custom mb-20">
         <Input
           variant="underlined"
           label="Enter the VIN code"
