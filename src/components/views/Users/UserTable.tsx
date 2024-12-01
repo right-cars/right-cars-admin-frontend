@@ -32,7 +32,6 @@ interface Users {
 
 const getStatusColor = (status: string): string => {
   const normalizedStatus = status.trim().toLowerCase();
-  console.log(`Normalized Status: ${normalizedStatus}`);
   switch (normalizedStatus) {
     case "verified":
       return "text-green-600";
