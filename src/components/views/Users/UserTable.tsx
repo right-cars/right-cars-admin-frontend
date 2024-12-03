@@ -59,7 +59,7 @@ export default function UsersTable({ data }: Users) {
 
   return (
     <Table
-      className="custom-table"
+      className="custom-table pb-[120px]"
       classNames={{
         thead: "custom-thead",
         tr: "bg-pureWhite",

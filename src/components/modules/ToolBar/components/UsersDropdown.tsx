@@ -1,3 +1,4 @@
+"use client"
 import { Dropdown, DropdownItem, DropdownTrigger, DropdownMenu, Button } from "@nextui-org/react";
 import Image from "next/image";
 import { useMemo, useState } from "react";

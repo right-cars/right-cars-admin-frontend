@@ -68,6 +68,7 @@ a {
   background-color: transparent;
   padding: 0;
   box-shadow: none;
+  overflow-y: hidden;
 }
 
 .custom-table {
@@ -102,4 +103,9 @@ a {
 
 .custom-table span {
   text-transform: none;
+}
+
+table {
+  height: calc(100vh - 10px);
+  overflow-y: auto;
 }

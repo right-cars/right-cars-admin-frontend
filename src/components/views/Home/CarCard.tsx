@@ -21,9 +21,9 @@ export default function CarCard(props: CardProps) {
       <Image src={img} alt={brand} width={272} height={200} />
 
       <div className="px-4">
-        <p>{year}</p>
-        <h3>{brand}</h3>
-        <p>{price}</p>
+        <p className="text-sm-extended font-bold mb-[6px]">{year}</p>
+        <h3 className='text-base-extended font-semibold mb-2'>{brand}</h3>
+        <p className="text-md font-bold text-gray">{price}</p>
       </div>
 
       <div className="px-4 w-full mt-auto">
@@ -34,7 +34,7 @@ export default function CarCard(props: CardProps) {
           color="primary"
           variant="flat"
           href={`/edit/${id}`}
-          className=""
+          className="uppercase"
         >
           Edit details
         </Button>

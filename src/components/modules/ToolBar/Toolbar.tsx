@@ -1,4 +1,3 @@
-"use client";
 import GoBackBtn from "@/components/modules/ToolBar/components/GoBackBtn";
 import SearchInput from "./components/SearchInput";
 import VehicleSelect from "./components/VehicleDropdown";
@@ -12,13 +11,24 @@ interface Props {
   type?: "users" | "vehicles";
 }
 
+function getTitleText(variant: "manage" | "edit" | "add"): string {
+  switch (variant) {
+    case "edit":
+      return "EDIT:";
+    case "add":
+      return "ADD A";
+    default:
+      return "MANAGE";
+  }
+}
+
 export default function Toolbar({
   title,
   variant = "manage",
   type = "vehicles",
 }: Props) {
-  const titleText =
-    variant === "edit" ? "EDIT:" : variant === "add" ? "ADD A" : "MANAGE";
+  const titleText = getTitleText(variant);
+
   return (
     <div className="py-16">
       <GoBackBtn />
@@ -32,7 +42,6 @@ export default function Toolbar({
           <div className="flex items-center gap-4">
             <SearchInput />
             {type === "vehicles" ? <SortDropdown /> : <UsersSortDropdown />}
-
             {type === "vehicles" ? <VehicleSelect /> : <UsersDropdown />}
           </div>
         )}

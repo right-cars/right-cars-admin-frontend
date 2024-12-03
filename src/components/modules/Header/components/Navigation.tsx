@@ -1,35 +1,10 @@
 import { Link, NavbarContent, NavbarItem } from "@nextui-org/react";
-import { AutoSvg } from "../../../../../public/icons/header/AutoSvg";
-import { UserSvg } from "../../../../../public/icons/header/User";
-import { CreateAutoSvg } from "../../../../../public/icons/header/CraeteAutoSvg";
-import { AuctionSvg } from "../../../../../public/icons/header/AuctionSvg";
-import { usePathname } from "next/navigation";
 
-const navItems = [
-  {
-    img: <AutoSvg />,
-    href: "/",
-    text: "Vehicles",
-  },
-  {
-    img: <UserSvg />,
-    href: "/users",
-    text: "Users",
-  },
-  {
-    img: <CreateAutoSvg />,
-    href: "/create-vehicle",
-    text: "Add a Vehicle",
-  },
-  {
-    img: <AuctionSvg />,
-    href: "/auction",
-    text: "Auction",
-  },
-];
+import { usePathname } from "next/navigation";
+import { navItems } from "./navItems";
 
 export default function Navigation() {
-    const pathname = usePathname();
+  const pathname = usePathname();
   return (
     <NavbarContent className="flex gap-14">
       {navItems.map(({ text, href, img }, index) => {

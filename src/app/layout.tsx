@@ -1,19 +1,8 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { Metrophobic, Work_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "../components/modules/Header/Header";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
 const workSans = Work_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -37,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.className} ${geistMono.className} ${workSans.className} ${metrophobic.className}`}
+      className={`${workSans.className} ${metrophobic.className}`}
     >
       <body className="bg-background text-textColor">
         <Header />

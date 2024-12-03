@@ -3,8 +3,8 @@ import Container from "@/components/common/Container";
 import Toolbar from "@/components/modules/ToolBar/Toolbar";
 import VehicleFormBlock from "@/components/modules/VehicleFormBlock/VehicleFormBlock";
 import { BlockData } from "@/types/types";
-import { temporary } from "../temporary";
-import { tepmoraryImgs } from "../temporaryImgs";
+import { temporary } from "./temporary";
+import { tepmoraryImgs } from "./temporaryImgs";
 
 const temporaryVideoUrl = "https://youtu.be/D9G1VOjN_84?si=GIZHe07Ugzx-u9AM";
 
