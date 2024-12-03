@@ -1,10 +1,10 @@
-import InputsBlock from "@/components/common/InputsBlock/InputsBlock";
-import { VehicleFormBlockProps, BlockData } from "@/types/types";
 import { useState } from "react";
-import VinCode from "./VinCode";
+import { VehicleFormBlockProps, BlockData } from "@/types/types";
+import InputsBlock from "@/components/common/InputsBlock/InputsBlock";
 import ImageBlock from "@/components/common/UploadImagesBlock/ImageBlock";
 import VideoBlock from "@/components/common/VideoBlock/VideoBlock";
 import SaveOrCancel from "@/components/common/Buttons/SaveOrCancel";
+import VinCode from "./VinCode";
 
 export default function VehicleFormBlock({
   variant,

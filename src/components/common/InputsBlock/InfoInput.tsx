@@ -1,5 +1,5 @@
-import { InputProps } from "@/types/types";
 import { Image, Input } from "@nextui-org/react";
+import { InputProps } from "@/types/types";
 
 export default function InfoInput({
   label,

@@ -1,6 +1,6 @@
 "use client";
-import { Tab, Tabs } from "@nextui-org/react";
 import { useState } from "react";
+import { Tab, Tabs } from "@nextui-org/react";
 import UsersTable from "./UserTable";
 import { temporaryData } from "./temporaryData";
 

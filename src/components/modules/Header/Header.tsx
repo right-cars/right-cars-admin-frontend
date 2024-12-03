@@ -1,11 +1,11 @@
 "use client";
 
-import { Button, Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
-
 import { usePathname } from "next/navigation";
-import Navigation from "./components/Navigation";
-import Logo from "./components/Logo";
+import { Button, Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
 import Image from "next/image";
+
+import Logo from "./components/Logo";
+import Navigation from "./components/Navigation";
 import UserInfo from "./components/UserInfo";
 
 export default function Header() {

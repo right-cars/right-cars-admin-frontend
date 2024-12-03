@@ -1,9 +1,9 @@
 "use client";
-import { Tab, Tabs } from "@nextui-org/react";
-import { temporaryData } from "./temporaryData";
-import CarCard from "@/components/views/Home/CarCard";
 import { useState } from "react";
+import { Tab, Tabs } from "@nextui-org/react";
 import CustomPagination from "../../common/Pagination";
+import CarCard from "@/components/views/Home/CarCard";
+import { temporaryData } from "./temporaryData";
 import { tabs } from "./tabs";
 
 const itemsPerPage = 8;

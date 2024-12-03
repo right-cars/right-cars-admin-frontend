@@ -1,4 +1,3 @@
-import DeleteModal from "@/components/common/modals/DeleteModal";
 import {
   Dropdown,
   DropdownItem,
@@ -7,6 +6,7 @@ import {
   useDisclosure,
 } from "@nextui-org/react";
 import Image from "next/image";
+import DeleteModal from "@/components/common/modals/DeleteModal";
 
 export default function ActionsDropdown() {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();

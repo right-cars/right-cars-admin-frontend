@@ -1,6 +1,5 @@
-import { Link, NavbarContent, NavbarItem } from "@nextui-org/react";
-
 import { usePathname } from "next/navigation";
+import { Link, NavbarContent, NavbarItem } from "@nextui-org/react";
 import { navItems } from "./navItems";
 
 export default function Navigation() {

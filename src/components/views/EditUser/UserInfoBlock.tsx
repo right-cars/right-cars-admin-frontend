@@ -1,8 +1,8 @@
+import { useState } from "react";
 import { initialUserData } from "@/app/users/[id]/initialData";
 import SaveOrCancel from "@/components/common/Buttons/SaveOrCancel";
 import FileUploadInput from "@/components/common/InputsBlock/FileUploadInput";
 import InfoInput from "@/components/common/InputsBlock/InfoInput";
-import { useState } from "react";
 
 export default function UserInfoBlock() {
   const [formData, setFormData] = useState(initialUserData);
