@@ -3,13 +3,12 @@ import Image from "next/image";
 
 export default function FinApp() {
   return (
-    <div className="pb-[120px]">
+    <div className="mb-20">
       <h2 className="text-md font-bold mb-14 text-black uppercase">
         Finance applications
       </h2>
-      <div className="py-4 px-[8px] bg-pureWhite rounded-[24px] shadow-custom w-fit">
-        <div className="flex items-center gap-8">
-          <div className="flex items-center gap-16 px-3 pb-[6px] border-b-2 border-[#D4D4D8]">
+      <div className="py-4 px-[8px] bg-pureWhite rounded-[24px] shadow-custom w-[540px]">
+          <div className="flex justify-between items-center gap-16 px-3 pb-[6px] border-b-2 border-[#D4D4D8] w-full">
             <Link
               href="#"
               isExternal
@@ -39,7 +38,6 @@ export default function FinApp() {
             </div>
           </div>
         </div>
-      </div>
     </div>
   );
 }
