@@ -18,10 +18,10 @@ export default function Header() {
   }
 
   return (
-    <div className="bg-pureWhite">
+    <div className="bg-pureWhite shadow-custom">
       <Navbar
         shouldHideOnScroll
-        className="bg-pureWhite max-w-[1600px] mx-auto px-[232px] pt-4 pb-[22px] navbar w-full shadow-custom"
+        className="bg-pureWhite max-w-[1600px] mx-auto px-[232px] pt-4 pb-[22px] navbar w-full"
       >
         <Logo />
         <Navigation />
