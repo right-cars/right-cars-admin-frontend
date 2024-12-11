@@ -22,9 +22,17 @@ export default function StatusTabs({filters}) {
   useEffect(()=> {
     const fetchCars = async()=> {
       setLoading(true);
-      const data = await getAllCars();
-      setCars(data);
-      setLoading(false);
+      try {
+        const data = await getAllCars();
+        setCars(data);
+      }
+      catch(error) {
+        console.log(error);
+      }
+      finally {
+        setLoading(false);
+
+      }
     }
 
     fetchCars();

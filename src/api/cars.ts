@@ -3,7 +3,7 @@ import axios from "axios";
 // const {NEXT_PUBLIC_API_URL: baseURL} = process.env;
 
 const carsInstance = axios.create({
-    baseURL: "right-cars-backend-production.up.railway.app/api/cars",
+    baseURL: "https://right-cars-backend-production.up.railway.app/api/cars",
 })
 
 // @ts-expect-error
