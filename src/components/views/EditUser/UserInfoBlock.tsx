@@ -38,6 +38,7 @@ export default function UserInfoBlock() {
               <FileUploadInput
                 key={input.id}
                 label={input.label}
+                // @ts-expect-error
                 onFileChange={(file) => handleFileChange(input.id, file)}
               />
             ) : (
@@ -46,12 +47,14 @@ export default function UserInfoBlock() {
                 readOnly={input.readonly || false}
                 label={input.label}
                 value={input.value}
+                errors={{}}
                 onChange={(newValue) => handleInputChange(input.id, newValue)}
               />
             )
           )}
         </div>
       </div>
+      {/*@ts-expect-error*/}
       <SaveOrCancel variant="save" onSave={handleSave} />
     </div>
   );

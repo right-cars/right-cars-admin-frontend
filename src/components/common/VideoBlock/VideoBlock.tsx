@@ -18,7 +18,7 @@ export default function VideoBlock({ onSaveVideoUrl, initialVideoUrl }: VideoBlo
     if (initialVideoUrl !== videoUrl) {
       setVideoUrl(initialVideoUrl ?? null);
     }
-  }, [initialVideoUrl]);
+  }, [initialVideoUrl, videoUrl]);
 
   const handleUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const url = e.target.value;
