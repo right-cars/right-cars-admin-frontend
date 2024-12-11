@@ -3,7 +3,8 @@ import { useMemo, useState } from "react";
 import { Dropdown, DropdownItem, DropdownTrigger, DropdownMenu, Button } from "@nextui-org/react";
 import Image from "next/image";
 
-export default function VehicleDropdown() {
+// @ts-expect-error
+export default function VehicleDropdown({setFilters}) {
   const [selectedKeys, setSelectedKeys] = useState<Set<"all" | string>>(new Set([]));
   const [isOpen, setIsOpen] = useState(false);
 
@@ -14,7 +15,7 @@ export default function VehicleDropdown() {
 
   return (
     <Dropdown
-      onOpenChange={(open) => setIsOpen(open)} 
+      onOpenChange={(open) => setIsOpen(open)}
     >
       <DropdownTrigger>
         <Button variant="light" className="w-[149px] flex items-center gap-[8px]">
@@ -34,7 +35,11 @@ export default function VehicleDropdown() {
         disallowEmptySelection
         selectionMode="single"
         selectedKeys={selectedKeys}
-        onSelectionChange={(keys) => setSelectedKeys(keys as Set<"all" | string>)}
+        onSelectionChange={(keys) => {
+          setSelectedKeys(keys as Set<"all" | string>);
+          //@ts-expect-error
+          setFilters(prevFilters => ({...prevFilters, type: keys.values().next().value}));
+        }}
       >
         <DropdownItem key="cars">CARS</DropdownItem>
         <DropdownItem key="bakkie">BAKKIE</DropdownItem>

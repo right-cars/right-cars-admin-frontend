@@ -1,4 +1,7 @@
 "use client"
+
+import ProtectedRoute from "@/components/routes/ProtectedRoute/ProtectedRoute";
+
 import Container from "@/components/common/Container";
 import Toolbar from "@/components/modules/ToolBar/Toolbar";
 import DocumentBlock from "@/components/views/EditUser/Documents";
@@ -8,12 +11,14 @@ import UserInfoBlock from "@/components/views/EditUser/UserInfoBlock";
 
 export default function UserEdit() {
   return (
-    <Container>
-      <Toolbar type="users" title="Humeniuk Alina" variant="edit" />
-      <UserInfoBlock />
-      <DocumentBlock />
-      <FinApp />
-      <Security/>
-    </Container>
+      <ProtectedRoute>
+          <Container>
+              <Toolbar type="users" title="Humeniuk Alina" variant="edit" />
+              <UserInfoBlock />
+              <DocumentBlock />
+              <FinApp />
+              <Security/>
+          </Container>
+      </ProtectedRoute>
   );
 }

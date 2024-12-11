@@ -5,12 +5,13 @@ import ActionsDropdown from "./ActionsDropdown";
 interface CardProps {
   id: string;
   img: string;
+  make: string;
   year: number;
-  brand: string;
+  // brand: string;
   price: string;
 }
 export default function CarCard(props: CardProps) {
-  const { img, year, brand, price, id } = props;
+  const { img, year, make, price, id } = props;
   return (
     <li className="pb-6 bg-pureWhite flex flex-col gap-6 items-center rounded-lg border border-lightGray shadow-custom relative">
       <div className="absolute top-[14px] right-[14px]">
@@ -18,11 +19,11 @@ export default function CarCard(props: CardProps) {
         <ActionsDropdown />
       </div>
 
-      <Image src={img} alt={brand} width={272} height={200} />
+      <Image src={img} alt={make} width={272} height={200} />
 
       <div className="px-4">
         <p className="text-sm-extended font-bold mb-[6px]">{year}</p>
-        <h3 className='text-base-extended font-semibold mb-2'>{brand}</h3>
+        <h3 className='text-base-extended font-semibold mb-2'>{make}</h3>
         <p className="text-md font-bold text-gray">{price}</p>
       </div>
 

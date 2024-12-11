@@ -24,8 +24,11 @@ function getTitleText(variant: "manage" | "edit" | "add"): string {
 
 export default function Toolbar({
   title,
+    // @ts-expect-error
+    setFilters,
   variant = "manage",
   type = "vehicles",
+
 }: Props) {
   const titleText = getTitleText(variant);
 
@@ -40,9 +43,9 @@ export default function Toolbar({
 
         {variant === "manage" && (
           <div className="flex items-center gap-4">
-            <SearchInput />
-            {type === "vehicles" ? <SortDropdown /> : <UsersSortDropdown />}
-            {type === "vehicles" ? <VehicleSelect /> : <UsersDropdown />}
+            <SearchInput setFilters={setFilters} />
+            {type === "vehicles" ? <SortDropdown setFilters={setFilters} /> : <UsersSortDropdown />}
+            {type === "vehicles" ? <VehicleSelect setFilters={setFilters} /> : <UsersDropdown />}
           </div>
         )}
       </div>

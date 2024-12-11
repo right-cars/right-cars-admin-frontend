@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { Input } from "@nextui-org/react";
@@ -16,11 +18,11 @@ export default function VideoBlock({ onSaveVideoUrl, initialVideoUrl }: VideoBlo
     if (initialVideoUrl !== videoUrl) {
       setVideoUrl(initialVideoUrl ?? null);
     }
-  }, [initialVideoUrl]); 
+  }, [initialVideoUrl]);
 
   const handleUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const url = e.target.value;
-    setVideoUrl(url); 
+    setVideoUrl(url);
     onSaveVideoUrl(url);
   };
 

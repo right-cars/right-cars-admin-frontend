@@ -6,7 +6,7 @@ import { AuctionSvg } from "../../../../../public/icons/header/AuctionSvg";
 export const navItems = [
   {
     img: <AutoSvg />,
-    href: "/",
+    href: "/vehicles",
     text: "Vehicles",
   },
   {

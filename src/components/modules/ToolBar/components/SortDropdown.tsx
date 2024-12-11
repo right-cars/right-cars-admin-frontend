@@ -8,8 +8,8 @@ import {
   Button,
 } from "@nextui-org/react";
 import Image from "next/image";
-
-export default function SortDropdown() {
+// @ts-expect-error
+export default function SortDropdown({setFilters}) {
   const [selectedKeys, setSelectedKeys] = useState<Set<"all" | string>>(
     new Set([])
   );
@@ -40,8 +40,11 @@ export default function SortDropdown() {
         disallowEmptySelection
         selectionMode="single"
         selectedKeys={selectedKeys}
-        onSelectionChange={(keys) =>
-          setSelectedKeys(keys as Set<"" | string>)
+        onSelectionChange={(keys) => {
+          setSelectedKeys(keys as Set<"" | string>);
+            //@ts-expect-error
+            setFilters(prevFilters => ({...prevFilters, sort: keys.values().next().value}));
+        }
         }
       >
         <DropdownItem key="price">BY PRICE</DropdownItem>

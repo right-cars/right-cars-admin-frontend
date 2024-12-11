@@ -1,9 +1,13 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import SaveOrCancel from "../Buttons/SaveOrCancel";
+// import SaveOrCancel from "../Buttons/SaveOrCancel";
 import UploadBtn from "./UploadBtn";
 import Gallery from "./Gallery";
 
-export default function ImageBlock({ initialImages }: { initialImages?: (File | string | null)[] }) {
+
+// @ts-expect-error
+export default function ImageBlock({ errors, setValue, initialImages }: { initialImages?: (File | string | null)[] }) {
   const [images, setImages] = useState<(File | string | null)[]>(Array(12).fill(null));
 
   useEffect(() => {
@@ -20,6 +24,7 @@ export default function ImageBlock({ initialImages }: { initialImages?: (File | 
     const updatedImages = [...images];
     updatedImages[index] = file;
     setImages(updatedImages);
+    setValue("images", updatedImages);
   };
 
   const removeImage = (index: number) => {
@@ -28,16 +33,16 @@ export default function ImageBlock({ initialImages }: { initialImages?: (File | 
     setImages(updatedImages);
   };
 
-  const handleSave = () => {
-    const uploadedFiles = images.filter((image) => image !== null) as File[];
-    if (uploadedFiles.length > 0) {
-      const formData = new FormData();
-      uploadedFiles.forEach((file, index) => {
-        formData.append(`image_${index + 1}`, file);
-      });
-      console.log("Файли для збереження:", uploadedFiles);
-    }
-  };
+  // const handleSave = () => {
+  //   const uploadedFiles = images.filter((image) => image !== null) as File[];
+  //   if (uploadedFiles.length > 0) {
+  //     const formData = new FormData();
+  //     uploadedFiles.forEach((file, index) => {
+  //       formData.append(`image_${index + 1}`, file);
+  //     });
+  //     console.log("Файли для збереження:", uploadedFiles);
+  //   }
+  // };
 
   return (
     <div>
@@ -47,10 +52,10 @@ export default function ImageBlock({ initialImages }: { initialImages?: (File | 
 
       {/* Галерея */}
       <Gallery images={images} handleFileChange={handleFileChange} removeImage={removeImage}/>
-
-      {images.some((image) => image !== null) && (
-        <SaveOrCancel variant="save" onSave={handleSave} />
-      )}
+      {errors.images && <p style={{color: "red"}}>{errors.images.message}</p>}
+      {/*{images.some((image) => image !== null) && (*/}
+      {/*  <SaveOrCancel variant="save" onSave={handleSave} />*/}
+      {/*)}*/}
     </div>
   );
 }

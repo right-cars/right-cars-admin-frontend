@@ -1,8 +1,13 @@
+import {Control} from "react-hook-form";
+
 export interface InputProps {
   label?: string;
-  value: string;
-  onChange: (value: string) => void;
+  value?: string;
+  control?: Control;
+  name?: string;
+  onChange?: (value: string) => void;
   readOnly?: boolean;
+  errors: object | undefined;
 }
 
 export interface BlockData {
@@ -11,6 +16,7 @@ export interface BlockData {
     id: string;
     label: string;
     value: string;
+    name: string;
     isFileInput?: boolean;
   }[];
 }
@@ -18,11 +24,6 @@ export interface BlockData {
 export interface VehicleFormBlockProps {
   variant: "add" | "edit";
   initialData: BlockData[];
-  onSave: (data: {
-    blocks: BlockData[];
-    files: (File | null)[];
-    video: string | null;
-  }) => void;
   initialImages?: (File | string | null)[];
   initialVideoUrl?: string;
 }

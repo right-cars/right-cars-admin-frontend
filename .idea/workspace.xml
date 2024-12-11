@@ -1,4 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{}</component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/cars.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/app/vehicles/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/validation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/routes/ProtectedRoute/ProtectedRoute.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/routes/PublicRoute/PublicRoute.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/providers/AuthContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auction/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/action/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/create-vehicle/initialData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/create-vehicle/initialData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/create-vehicle/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/create-vehicle/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/edit/[id]/temporary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit/[id]/temporary.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/users/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/users/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/users/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/users/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Buttons/SaveOrCancel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Buttons/SaveOrCancel.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/InputsBlock/FileUploadInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/FileUploadInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/InputsBlock/InfoInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/InfoInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/InputsBlock/InputsBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/InputsBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/UploadImagesBlock/ImageBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/UploadImagesBlock/ImageBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/VideoBlock/VideoBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/VideoBlock/VideoBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/Header/components/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/Header/components/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/Header/components/navItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/Header/components/navItems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/ToolBar/Toolbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/ToolBar/Toolbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/ToolBar/components/SearchInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/ToolBar/components/SearchInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/ToolBar/components/SortDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/ToolBar/components/SortDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/ToolBar/components/VehicleDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/ToolBar/components/VehicleDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Home/CarCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/CarCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Home/StatusTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/StatusTabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/SignIn/SignInForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/SignIn/SignInForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2pnncf0lflupmLhgOyfycIVVIe1" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Projects\\cars\\right-cars-admin-frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-WS-241.15989.105" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="" />
+      <created>1733410792045</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733410792045</updated>
+      <workItem from="1733410794595" duration="2012000" />
+      <workItem from="1733733355242" duration="26695000" />
+      <workItem from="1733789518233" duration="2021000" />
+      <workItem from="1733815550288" duration="3062000" />
+      <workItem from="1733818702590" duration="2000" />
+      <workItem from="1733819072875" duration="5516000" />
+      <workItem from="1733841964289" duration="6622000" />
+      <workItem from="1733864474870" duration="7294000" />
+      <workItem from="1733900440433" duration="3983000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
 </project>

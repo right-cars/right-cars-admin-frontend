@@ -8,10 +8,13 @@ import Logo from "./components/Logo";
 import Navigation from "./components/Navigation";
 import UserInfo from "./components/UserInfo";
 
+import {useAuth} from "@/providers/AuthContext";
+
 export default function Header() {
   const pathname = usePathname();
+  const {logout} = useAuth();
 
-  const isAuthPage = pathname === "/sign-in";
+  const isAuthPage = pathname === "/";
 
   if (isAuthPage) {
     return null;
@@ -29,9 +32,7 @@ export default function Header() {
           <UserInfo />
           <NavbarItem>
             <Button
-              onClick={() => {
-                console.log("😨");
-              }}
+              onClick={logout}
               variant="light"
               className="flex gap-[10px]"
             >
