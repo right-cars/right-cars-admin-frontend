@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, redirect } from "next/navigation";
 import { Button, Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
 import Image from "next/image";
 
@@ -32,7 +32,10 @@ export default function Header() {
           <UserInfo />
           <NavbarItem>
             <Button
-              onClick={logout}
+              onClick={()=> {
+                logout();
+                redirect("/");
+              }}
               variant="light"
               className="flex gap-[10px]"
             >

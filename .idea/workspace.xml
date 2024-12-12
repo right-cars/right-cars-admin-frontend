@@ -6,7 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/_not-found/page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/_not-found/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/cars.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/cars.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/action/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auction/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/InputsBlock/InfoInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/InfoInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/UploadImagesBlock/ImageBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/UploadImagesBlock/ImageBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/UploadImagesBlock/UploadBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/UploadImagesBlock/UploadBtn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/VideoBlock/VideoBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/VideoBlock/VideoBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/modals/SuccessModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/modals/SuccessModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/Header/components/navItems.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/Header/components/navItems.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +94,7 @@
       <workItem from="1733922308278" duration="513000" />
       <workItem from="1733923048445" duration="138000" />
       <workItem from="1733923222774" duration="2310000" />
+      <workItem from="1734004782459" duration="9700000" />
     </task>
     <servers />
   </component>

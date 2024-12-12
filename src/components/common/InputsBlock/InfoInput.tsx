@@ -16,13 +16,13 @@ export default function InfoInput({
       <Controller
           name={name}
           control={control}
-          defaultValue=""
+          defaultValue={value}
           render={({ field }) => <Input
               isReadOnly={readOnly ? true : false}
               variant="underlined"
               label={label}
               {...field}
-              value={value}
+
               // @ts-expect-error
               errorMessage={errors[name] ? errors[name]?.message : ""}
               // @ts-expect-error

@@ -14,11 +14,11 @@ interface VideoBlockProps {
 export default function VideoBlock({ onSaveVideoUrl, initialVideoUrl }: VideoBlockProps) {
   const [videoUrl, setVideoUrl] = useState<string | null>(initialVideoUrl ?? null);
 
-  useEffect(() => {
-    if (initialVideoUrl !== videoUrl) {
-      setVideoUrl(initialVideoUrl ?? null);
-    }
-  }, [initialVideoUrl, videoUrl]);
+  // useEffect(() => {
+  //   if (initialVideoUrl !== videoUrl) {
+  //     setVideoUrl(initialVideoUrl ?? null);
+  //   }
+  // }, [initialVideoUrl, videoUrl]);
 
   const handleUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const url = e.target.value;

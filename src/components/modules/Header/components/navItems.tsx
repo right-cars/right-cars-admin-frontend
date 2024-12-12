@@ -21,7 +21,7 @@ export const navItems = [
   },
   {
     img: <AuctionSvg />,
-    href: "/action",
-    text: "Action",
+    href: "/auction",
+    text: "Auction",
   },
 ];

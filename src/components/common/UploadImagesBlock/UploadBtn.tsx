@@ -20,7 +20,7 @@ export default function UploadBtn({ handleFileChange, images }: Props) {
             htmlFor="upload-images"
             className="cursor-pointer flex items-center gap-[8px]"
           >
-            <p>Download pictures</p>
+            <p>Upload pictures</p>
             <Image
               src="/icons/upload.svg"
               alt="upload icon"

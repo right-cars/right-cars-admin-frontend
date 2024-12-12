@@ -20,7 +20,7 @@ export default function ImageBlock({ errors, setValue, initialImages }: { initia
     e: React.ChangeEvent<HTMLInputElement>,
     index: number
   ) => {
-    const file = e.target.files ? e.target.files[0] : null;
+    const file = e.target.files ? e.target.files[0]: null;
     const updatedImages = [...images];
     updatedImages[index] = file;
     setImages(updatedImages);

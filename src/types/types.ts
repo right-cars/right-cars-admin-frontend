@@ -26,4 +26,5 @@ export interface VehicleFormBlockProps {
   initialData: BlockData[];
   initialImages?: (File | string | null)[];
   initialVideoUrl?: string;
+  id?: string;
 }

@@ -6,6 +6,7 @@ import {
   ModalContent,
   ModalFooter,
 } from "@nextui-org/react";
+import { usePathname } from "next/navigation";
 
 interface ModalProps {
   isOpen: boolean;
@@ -18,6 +19,7 @@ export default function SuccessModal({
   onOpenChange,
   title,
 }: ModalProps) {
+    const pathname = usePathname();
   return (
     <Modal
       isOpen={isOpen}
@@ -36,7 +38,7 @@ export default function SuccessModal({
             <ModalBody className="px-6 w-full">
               <h2 className="text-[28px]  uppercase font-bold">
                 {title}
-                <br /> <span>has been successfully added</span>
+                <br /> <span>{pathname === "/create-vehicle" ? "has been successfully added" : "has been successfully update"}</span>
               </h2>
             </ModalBody>
             <ModalFooter className="flex flex-col w-full pb-[60px]">
@@ -51,14 +53,14 @@ export default function SuccessModal({
               </Button>
               <Button
                 as={Link}
-                href="/create-vehicle"
+                href={pathname === "/create-vehicle" ? "/create-vehicle" : "/vehicles"}
                 radius="full"
                 color="primary"
                 variant="bordered"
                 onPress={onClose}
                 className="bordered-button"
               >
-                Add another vehicle
+                  {pathname === "/create-vehicle" ? "Add another vehicle" : "Back to vehicle list"}
               </Button>
             </ModalFooter>
           </>

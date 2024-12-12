@@ -28,13 +28,12 @@ export default async function EditVehicle({params}) {
             }
         })
     }
-    console.log(data)
 
   return (
       <ProtectedRoute>
           <Container>
               <Toolbar title={data.make} variant="edit" />
-              <VehicleFormBlock variant="edit" initialImages={data.images} initialData={temporary} initialVideoUrl={data.video}  />
+              <VehicleFormBlock id={id} variant="edit" initialImages={data.images} initialData={temporary} initialVideoUrl={data.video}  />
           </Container>
       </ProtectedRoute>
   );

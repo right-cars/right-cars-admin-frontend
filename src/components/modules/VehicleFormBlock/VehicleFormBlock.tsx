@@ -4,6 +4,7 @@ import { useState } from "react";
 import {useForm} from "react-hook-form";
 import {useDisclosure} from "@nextui-org/react";
 import { yupResolver } from '@hookform/resolvers/yup';
+import { usePathname } from "next/navigation";
 
 import { VehicleFormBlockProps, BlockData } from "@/types/types";
 
@@ -14,18 +15,19 @@ import SaveOrCancel from "@/components/common/Buttons/SaveOrCancel";
 
 import schema from "./validation";
 
-    import {addCar} from "@/api/cars";
+    import {addCar, updateCarById} from "@/api/cars";
 
 // import VinCode from "./VinCode";
 
 export default function VehicleFormBlock({
   // variant,
+    id,
   initialData,
   initialImages,
    initialVideoUrl
 }: VehicleFormBlockProps) {
     const { isOpen, onOpen } = useDisclosure();
-    const defaultValues = initialData.map(({inputs}) => inputs).flat().map(item => ({[item.name]: item.value}));
+    const defaultValues = initialData.map(({inputs}) => inputs).flat().reduce((acum, {name, value}) => ({...acum, [name]: value}) , {});
 
     const {
         handleSubmit,
@@ -35,12 +37,18 @@ export default function VehicleFormBlock({
         reset,
         formState: { errors } } = useForm({
         resolver: yupResolver(schema),
-        defaultValues,
+        defaultValues: {
+            ...defaultValues,
+            images: initialImages,
+            video: initialVideoUrl,
+        },
     });
 
   const [blocks] = useState<BlockData[]>(initialData);
+  const pathname = usePathname();
+
   // const [files, setFiles] = useState<(File | null)[]>([]);
-  const [ ,setVideoUrl] = useState<string | null>(null);
+  // const [ ,setVideoUrl] = useState<string | null>(null);
 
   // const handleInputChange = (
   //   blockTitle: string,
@@ -89,12 +97,13 @@ export default function VehicleFormBlock({
 
    const handleVideoUrlChange = (url: string | null) => {
        // @ts-expect-error
-       setValue("url", url);
-       setVideoUrl(url);
+       setValue("video", url);
   };
 
    // @ts-expect-error
     const addVehicle = async data => {
+        const isAdd = pathname === "/create-vehicle";
+
         // @ts-expect-error
         if(!data.images || !data.images.filter(item => Boolean(item)).length) {
             // @ts-expect-error
@@ -122,7 +131,14 @@ export default function VehicleFormBlock({
         }
 
         try {
-            await addCar(formData);
+            console.log(data)
+            if(isAdd) {
+                await addCar(formData);
+            }
+            else {
+                // @ts-expect-error
+                await updateCarById(id, formData);
+            }
             reset();
             onOpen();
         }
