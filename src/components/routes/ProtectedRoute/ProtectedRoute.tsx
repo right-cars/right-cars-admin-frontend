@@ -1,11 +1,11 @@
 'use client';
 
-import { redirect } from 'next/navigation';
+// import { redirect } from 'next/navigation';
 import { ReactNode } from 'react';
-import {useAuth} from "@/providers/AuthContext";
+// import {useAuth} from "@/providers/AuthContext";
 
 const ProtectedRoute = ({ children }: { children: ReactNode }) => {
-    const { isAuthenticated } = useAuth();
+    // const { isAuthenticated } = useAuth();
 
     // useEffect(() => {
     //     if (!isAuthenticated) {
@@ -13,7 +13,7 @@ const ProtectedRoute = ({ children }: { children: ReactNode }) => {
     //     }
     // }, [isAuthenticated]);
 
-    if (!isAuthenticated) redirect('/');
+    // if (!isAuthenticated) redirect('/');
 
     return <>{children}</>;
 };

@@ -12,21 +12,30 @@ type AuthContextType = {
 const AuthContext = createContext<AuthContextType | null>(null);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-    const [isAuthenticated, setIsAuthenticated] = useState(()=> Boolean(localStorage.getItem("admin")));
+    const [isAuthenticated, setIsAuthenticated] = useState(()=> {
+        if(typeof window !== "undefined") {
+            return Boolean(localStorage.getItem("admin"))
+        };
+        return false;
+    });
     const [role, setRole] = useState('');
 
     const login = (userRole: string) => {
         setIsAuthenticated(true);
         setRole(userRole);
-        localStorage.setItem("admin", JSON.stringify({
-            role: userRole,
-        }));
+        if (typeof window !== "undefined") {
+            localStorage.setItem("admin", JSON.stringify({
+                role: userRole,
+            }));
+        }
     };
 
     const logout = () => {
         setIsAuthenticated(false);
         setRole('');
-        localStorage.removeItem("admin");
+        if (typeof window !== "undefined") {
+            localStorage.removeItem("admin");
+        }
     };
 
     return (

@@ -1,7 +1,5 @@
-"use client";
-
-export default function Auction() {
+export default function Action() {
   return (
-    <main>Auction</main>
+    <main>Action</main>
   )
 }

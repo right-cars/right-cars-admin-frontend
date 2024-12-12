@@ -1,11 +1,11 @@
 import { useState } from "react";
-import { initialUserData } from "@/app/users/[id]/initialData";
+import initialUsersData from "../../../data/initialUsersData";
 import SaveOrCancel from "@/components/common/Buttons/SaveOrCancel";
 import FileUploadInput from "@/components/common/InputsBlock/FileUploadInput";
 import InfoInput from "@/components/common/InputsBlock/InfoInput";
 
 export default function UserInfoBlock() {
-  const [formData, setFormData] = useState(initialUserData);
+  const [formData, setFormData] = useState(initialUsersData);
 
   const handleInputChange = (id: string, newValue: string) => {
     const updatedForm = formData.map((input) =>
