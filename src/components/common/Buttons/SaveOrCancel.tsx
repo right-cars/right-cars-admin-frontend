@@ -6,9 +6,10 @@ interface BtnProps {
   variant: "save" | "publish";
   onSave: () => void;
   isOpen: boolean;
+  title: string;
 }
 
-export default function SaveOrCancel({ variant, onSave, isOpen }: BtnProps) {
+export default function SaveOrCancel({ title, variant, onSave, isOpen }: BtnProps) {
     const { onOpenChange } = useDisclosure();
 
   return (
@@ -30,7 +31,7 @@ export default function SaveOrCancel({ variant, onSave, isOpen }: BtnProps) {
       </Button>
       {variant === "publish" && (
         <SuccessModal
-          title={"Volkswagen polo hatch"}
+          title={title}
           isOpen={isOpen}
           onOpenChange={onOpenChange}
         />

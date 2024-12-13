@@ -35,6 +35,7 @@ export default function VehicleFormBlock({
         setValue,
         setError,
         reset,
+        watch,
         formState: { errors } } = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
@@ -139,8 +140,8 @@ export default function VehicleFormBlock({
                 // @ts-expect-error
                 await updateCarById(id, formData);
             }
-            reset();
             onOpen();
+            // reset();
         }
         catch(error) {
             console.log(error);
@@ -148,6 +149,10 @@ export default function VehicleFormBlock({
     }
 
    const onSubmit = handleSubmit(addVehicle);
+
+    //@ts-expect-error
+    const [make, model] = watch(["make", "model"]);
+    const title = `${make} ${model}`;
 
   return (
     <form className="pb-[120px]">
@@ -171,7 +176,7 @@ export default function VehicleFormBlock({
             initialImages={initialImages} />
        <VideoBlock onSaveVideoUrl={handleVideoUrlChange} initialVideoUrl={initialVideoUrl} />
       </div>
-      <SaveOrCancel variant="publish" isOpen={isOpen} onSave={onSubmit} />
+      <SaveOrCancel title={title} variant="publish" isOpen={isOpen} onSave={onSubmit} />
     </form>
   );
 }

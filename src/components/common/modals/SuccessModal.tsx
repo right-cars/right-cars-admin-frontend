@@ -20,6 +20,7 @@ export default function SuccessModal({
   title,
 }: ModalProps) {
     const pathname = usePathname();
+
   return (
     <Modal
       isOpen={isOpen}
