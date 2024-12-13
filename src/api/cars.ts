@@ -9,7 +9,6 @@ const carsInstance = axios.create({
 
 // @ts-expect-error
 export const addCar = async car => {
-    console.log(car);
     const {data} = await carsInstance.post("/", car, {
         headers: {
             'Content-Type': 'multipart/form-data', // Заголовок укажется автоматически, но можно задать явно

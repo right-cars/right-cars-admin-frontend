@@ -136,6 +136,8 @@ export default function StatusTabs({filters}) {
                         //@ts-expect-error
                         make={car.make}
                         //@ts-expect-error
+                        model={car.model}
+                        //@ts-expect-error
                         price={car.price}
                         //@ts-expect-error
                         year={car.year}
