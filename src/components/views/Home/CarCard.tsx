@@ -16,7 +16,7 @@ export default function CarCard(props: CardProps) {
   return (
     <li className="pb-6 bg-pureWhite flex flex-col gap-6 items-center rounded-lg border border-lightGray shadow-custom relative overflow-hidden">
       <div className="absolute top-[14px] right-[14px]">
-        <ActionsDropdown />
+        <ActionsDropdown id={id} />
       </div>
 
       <div className="h-[200px]">

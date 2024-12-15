@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/providers/CarsContext.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/Buttons/SaveOrCancel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Buttons/SaveOrCancel.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/modals/SuccessModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/modals/SuccessModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/cars.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/cars.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/vehicles/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/vehicles/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/ToolBar/Toolbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/ToolBar/Toolbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/ToolBar/components/SearchInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/ToolBar/components/SearchInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/ToolBar/components/SortDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/ToolBar/components/SortDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/ToolBar/components/VehicleDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/ToolBar/components/VehicleDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Home/ActionsDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/ActionsDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Home/CarCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/CarCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Home/StatusTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/StatusTabs.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +26,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -39,19 +46,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Projects\\cars\\right-cars-admin-frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "C:\\Projects\\right-cars\\right-cars-admin-frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\cars\right-cars-admin-frontend\src\app\_not-found" />
@@ -85,7 +92,10 @@
       <workItem from="1733922308278" duration="513000" />
       <workItem from="1733923048445" duration="138000" />
       <workItem from="1733923222774" duration="2310000" />
-      <workItem from="1734004782459" duration="18036000" />
+      <workItem from="1734004782459" duration="20862000" />
+      <workItem from="1734119609815" duration="4167000" />
+      <workItem from="1734207243906" duration="1252000" />
+      <workItem from="1734267964608" duration="2750000" />
     </task>
     <servers />
   </component>

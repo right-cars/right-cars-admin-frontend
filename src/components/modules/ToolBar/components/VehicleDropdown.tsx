@@ -3,10 +3,14 @@ import { useMemo, useState } from "react";
 import { Dropdown, DropdownItem, DropdownTrigger, DropdownMenu, Button } from "@nextui-org/react";
 import Image from "next/image";
 
-// @ts-expect-error
-export default function VehicleDropdown({setFilters}) {
+import {useCars} from "@/providers/CarsContext";
+
+export default function VehicleDropdown() {
   const [selectedKeys, setSelectedKeys] = useState<Set<"all" | string>>(new Set([]));
   const [isOpen, setIsOpen] = useState(false);
+
+  // @ts-expect-error
+  const {setType} = useCars();
 
   const selectedValue = useMemo(
     () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
@@ -38,7 +42,7 @@ export default function VehicleDropdown({setFilters}) {
         onSelectionChange={(keys) => {
           setSelectedKeys(keys as Set<"all" | string>);
           //@ts-expect-error
-          setFilters(prevFilters => ({...prevFilters, type: keys.values().next().value}));
+          setType(keys.values().next().value);
         }}
       >
         <DropdownItem key="cars">CARS</DropdownItem>

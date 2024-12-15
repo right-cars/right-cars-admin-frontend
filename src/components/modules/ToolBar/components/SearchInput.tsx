@@ -3,7 +3,7 @@ import { Input } from "@nextui-org/react";
 import Image from "next/image";
 
 // @ts-expect-error
-export default function SearchInput({setFilters}) {
+export default function SearchInput({setSearch}) {
   return (
     <Input
       isClearable
@@ -12,8 +12,7 @@ export default function SearchInput({setFilters}) {
       radius="full"
       placeholder="Type to search..."
       aria-label="Search"
-      // @ts-expect-error
-      onChange={(e) => setFilters(prevFilters => ({...prevFilters, search: e.target.value}))}
+      onChange={(e) => setSearch(e.target.value)}
       startContent={
         <Image
           src="/icons/toolbar/search.svg"

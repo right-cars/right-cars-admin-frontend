@@ -5,6 +5,8 @@ import SortDropdown from "./components/SortDropdown";
 import UsersDropdown from "./components/UsersDropdown";
 import UsersSortDropdown from "./components/UsersSortDropDown";
 
+import {useCars} from "@/providers/CarsContext";
+
 interface Props {
   title: string;
   variant?: "manage" | "edit" | "add";
@@ -24,12 +26,13 @@ function getTitleText(variant: "manage" | "edit" | "add"): string {
 
 export default function Toolbar({
   title,
-    // @ts-expect-error
-    setFilters,
   variant = "manage",
   type = "vehicles",
 
 }: Props) {
+  //@ts-expect-error
+  const {setSearch} = useCars();
+
   const titleText = getTitleText(variant);
 
   return (
@@ -43,9 +46,9 @@ export default function Toolbar({
 
         {variant === "manage" && (
           <div className="flex items-center gap-4">
-            <SearchInput setFilters={setFilters} />
-            {type === "vehicles" ? <SortDropdown setFilters={setFilters} /> : <UsersSortDropdown />}
-            {type === "vehicles" ? <VehicleSelect setFilters={setFilters} /> : <UsersDropdown />}
+            <SearchInput setSearch={setSearch} />
+            {type === "vehicles" ? <SortDropdown /> : <UsersSortDropdown />}
+            {type === "vehicles" ? <VehicleSelect /> : <UsersDropdown />}
           </div>
         )}
       </div>

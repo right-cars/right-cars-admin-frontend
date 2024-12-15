@@ -3,8 +3,8 @@ import axios from "axios";
 // const {NEXT_PUBLIC_API_URL: baseURL} = process.env;
 
 const carsInstance = axios.create({
-    baseURL: "https://right-cars-backend-production.up.railway.app/api/cars",
-    // baseURL: "http://localhost:4000/api/cars",
+    // baseURL: "https://right-cars-backend-production.up.railway.app/api/cars",
+    baseURL: "http://localhost:4000/api/cars",
 })
 
 // @ts-expect-error
@@ -32,3 +32,15 @@ export const updateCarById = async (id: string, payload) => {
     const {data} = await carsInstance.put(`/${id}`, payload);
     return data;
 }
+
+// @ts-expect-error
+export const updateCarStatusId = async (id: string, payload) => {
+    const {data} = await carsInstance.patch(`/${id}/status`, payload);
+    return data;
+}
+
+export const deleteCarById = async (id: string) => {
+    const {data} = await carsInstance.delete(`/${id}`);
+    return data;
+}
+

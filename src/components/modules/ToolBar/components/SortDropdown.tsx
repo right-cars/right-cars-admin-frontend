@@ -8,11 +8,16 @@ import {
   Button,
 } from "@nextui-org/react";
 import Image from "next/image";
-// @ts-expect-error
-export default function SortDropdown({setFilters}) {
+
+import {useCars} from "@/providers/CarsContext";
+
+export default function SortDropdown() {
   const [selectedKeys, setSelectedKeys] = useState<Set<"all" | string>>(
     new Set([])
   );
+
+  //@ts-expect-error
+  const {setSort} = useCars();
 
   const selectedValue = useMemo(
     () => Array.from(selectedKeys).join(", ").replaceAll("_", " "),
@@ -43,7 +48,7 @@ export default function SortDropdown({setFilters}) {
         onSelectionChange={(keys) => {
           setSelectedKeys(keys as Set<"" | string>);
             //@ts-expect-error
-            setFilters(prevFilters => ({...prevFilters, sort: keys.values().next().value}));
+            setSort(keys.values().next().value);
         }
         }
       >

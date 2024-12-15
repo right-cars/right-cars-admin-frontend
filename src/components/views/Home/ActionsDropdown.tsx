@@ -8,8 +8,22 @@ import {
 import Image from "next/image";
 import DeleteModal from "@/components/common/modals/DeleteModal";
 
-export default function ActionsDropdown() {
+import {useCars} from "@/providers/CarsContext";
+
+//@ts-expect-error
+export default function ActionsDropdown({id}) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  // @ts-expect-error
+  const {deleteCar, updateCarStatus} = useCars();
+
+  const onDelete = ()=> {
+    deleteCar(id);
+    onOpenChange();
+  }
+
+  const onUpdateStatus = (status: string)=> {
+    updateCarStatus(id, status);
+  }
 
   return (
     <>
@@ -28,15 +42,15 @@ export default function ActionsDropdown() {
           disallowEmptySelection
           selectionMode="single"
         >
-          <DropdownItem key="reserved">Mark as reserved</DropdownItem>
-          <DropdownItem key="archive">Archive</DropdownItem>
+          <DropdownItem key="reserved" onPress={()=> onUpdateStatus("deposit")}>Mark as reserved</DropdownItem>
+          <DropdownItem key="archive" onPress={()=> onUpdateStatus("archive")}>Archive</DropdownItem>
           <DropdownItem key="delete" onPress={onOpen}>
             <p className="text-[#F31260]">Delete</p>
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
 
-      <DeleteModal isOpen={isOpen} onOpenChange={onOpenChange} />
+      <DeleteModal isOpen={isOpen} onOpenChange={onDelete} />
     </>
   );
 }
