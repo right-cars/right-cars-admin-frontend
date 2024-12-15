@@ -1,3 +1,5 @@
+"use client";
+
 import {useState, createContext, useContext, ReactNode, useEffect} from "react";
 
 import {getAllCars, deleteCarById, updateCarStatusId} from "@/api/cars";

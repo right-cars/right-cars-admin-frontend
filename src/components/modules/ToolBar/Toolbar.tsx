@@ -1,3 +1,5 @@
+"use client";
+
 import GoBackBtn from "@/components/modules/ToolBar/components/GoBackBtn";
 import SearchInput from "./components/SearchInput";
 import VehicleSelect from "./components/VehicleDropdown";
