@@ -85,9 +85,9 @@ export const CarsProvider = ({ children }: { children: ReactNode }) => {
         switch (type) {
             case "all":
                 return true;
-            case "cars":
+            case "car":
                 // @ts-expect-error
-                return car.type === "cars";
+                return car.type === "car";
             case "bakkie":
                 // @ts-expect-error
                 return car.type === "bakkie";

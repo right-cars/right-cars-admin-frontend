@@ -45,7 +45,7 @@ export default function VehicleDropdown() {
           setType(keys.values().next().value);
         }}
       >
-        <DropdownItem key="cars">CARS</DropdownItem>
+        <DropdownItem key="car">CARS</DropdownItem>
         <DropdownItem key="bakkie">BAKKIE</DropdownItem>
         <DropdownItem key="commercial">COMMERCIAL</DropdownItem>
       </DropdownMenu>
