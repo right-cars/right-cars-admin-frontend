@@ -3,9 +3,21 @@ import initialUsersData from "../../../data/initialUsersData";
 import SaveOrCancel from "@/components/common/Buttons/SaveOrCancel";
 import FileUploadInput from "@/components/common/InputsBlock/FileUploadInput";
 import InfoInput from "@/components/common/InputsBlock/InfoInput";
+import {useForm} from "react-hook-form";
+import {yupResolver} from "@hookform/resolvers/yup";
+import schema from "@/components/modules/VehicleFormBlock/validation";
 
 export default function UserInfoBlock() {
   const [formData, setFormData] = useState(initialUsersData);
+  const {
+    handleSubmit,
+    control,
+    setValue,
+    setError,
+    watch,
+    formState: { errors } } = useForm({
+    resolver: yupResolver(schema),
+  });
 
   const handleInputChange = (id: string, newValue: string) => {
     const updatedForm = formData.map((input) =>
@@ -34,10 +46,14 @@ export default function UserInfoBlock() {
       <div className="p-8 bg-pureWhite rounded-[24px] shadow-custom">
         <div className="grid grid-cols-2 gap-4">
           {formData.map((input) =>
+              // @ts-expect-error
             input.isFileInput ? (
               <FileUploadInput
                 key={input.id}
                 label={input.label}
+                name={input.name}
+                  // @ts-expect-error
+                control={control}
                 // @ts-expect-error
                 onFileChange={(file) => handleFileChange(input.id, file)}
               />
@@ -47,6 +63,9 @@ export default function UserInfoBlock() {
                 readOnly={input.readonly || false}
                 label={input.label}
                 value={input.value}
+                name={input.name}
+                  // @ts-expect-error
+                control={control}
                 errors={{}}
                 onChange={(newValue) => handleInputChange(input.id, newValue)}
               />

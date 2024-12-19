@@ -9,7 +9,11 @@ import FinApp from "@/components/views/EditUser/FinApp";
 import Security from "@/components/views/EditUser/Security";
 import UserInfoBlock from "@/components/views/EditUser/UserInfoBlock";
 
+import {useAuth} from "@/providers/AuthContext";
+
 export default function UserEdit() {
+    const {role} = useAuth();
+
   return (
       <ProtectedRoute>
           <Container>
@@ -17,7 +21,7 @@ export default function UserEdit() {
               <UserInfoBlock />
               <DocumentBlock />
               <FinApp />
-              <Security/>
+              {role === "superadmin" ? <Security/> : <div />}
           </Container>
       </ProtectedRoute>
   );

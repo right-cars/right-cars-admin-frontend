@@ -24,7 +24,7 @@ export default async function EditVehicle({params}) {
             }
         })
     }
-    console.log(temporary);
+
   return (
       <ProtectedRoute>
           <Container>

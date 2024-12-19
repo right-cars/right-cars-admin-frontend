@@ -18,7 +18,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
         };
         return false;
     });
-    const [role, setRole] = useState('');
+    const [role, setRole] = useState(()=> {
+        if(typeof window !== "undefined") {
+            // @ts-expect-error
+            const {role} = JSON.parse(localStorage.getItem("admin"));
+            return role;
+        };
+        return false;
+    });
 
     const login = (userRole: string) => {
         setIsAuthenticated(true);
@@ -39,7 +46,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ isAuthenticated, login, logout, role,}}>
+        <AuthContext.Provider value={{ isAuthenticated, login, logout, role}}>
             {children}
         </AuthContext.Provider>
     );
