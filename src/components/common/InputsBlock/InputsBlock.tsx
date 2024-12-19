@@ -1,5 +1,6 @@
 import FileUploadInput from "./FileUploadInput";
 import InfoInput from "./InfoInput";
+import SelectInput from "./SelectInput";
 import {Control} from "react-hook-form";
 
 interface InputData {
@@ -23,6 +24,47 @@ interface InputsBlockProps {
   // onFileChange: (inputId: string, file: File | null) => void;
 }
 
+// @ts-expect-error
+const getInput = ({input, control, errors}) => {
+  if(input.isFileInput)
+    return (
+        <FileUploadInput
+            control={control}
+            key={input.id}
+            label={input.label}
+            name={input.name}
+            errors={errors}
+            // onFileChange={(file) => {
+            //   onFileChange(input.id, file);
+            // }}
+        />
+    )
+  if(input.options)
+    return (<SelectInput
+        control={control}
+        key={input.id}
+        label={input.label}
+        name={input.name}
+        options={input.options}
+        value={input.value}
+        // onFileChange={(file) => {
+        //   onFileChange(input.id, file);
+        // }}
+    />)
+
+  return (
+      <InfoInput
+          key={input.id}
+          label={input.label}
+          control={control}
+          name={input.name}
+          errors={errors}
+          value={input.value}
+          // onChange={(newValue) => onInputChange(title, input.id, newValue)}
+      />
+  )
+}
+
 export default function InputsBlock({
   title,
   inputs,
@@ -37,30 +79,7 @@ export default function InputsBlock({
       <h2 className="text-md font-bold mb-14 text-black uppercase">{title}</h2>
       <div className="p-8 bg-pureWhite rounded-[24px] shadow-custom ">
         <div className="grid grid-cols-2 gap-4">
-          {inputs.map((input) => (
-            input.isFileInput ? (
-              <FileUploadInput
-                  control={control}
-                key={input.id}
-                label={input.label}
-                  name={input.name}
-                  errors={errors}
-                // onFileChange={(file) => {
-                //   onFileChange(input.id, file);
-                // }}
-              />
-            ) : (
-              <InfoInput
-                key={input.id}
-                label={input.label}
-                control={control}
-                name={input.name}
-                errors={errors}
-                value={input.value}
-                // onChange={(newValue) => onInputChange(title, input.id, newValue)}
-              />
-            )
-          ))}
+          {inputs.map((input) => getInput({input, control, errors}))}
         </div>
       </div>
     </div>

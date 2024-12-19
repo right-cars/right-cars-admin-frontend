@@ -13,6 +13,11 @@ export const initialData = [
       { id: nanoid(), label: "price", name: "price", value: "" },
       { id: nanoid(), label: "drive type", name: "drive_type", value: "" },
       { id: nanoid(), label: "finance", name: "finance", value: "" },
+      { id: nanoid(), label: "Select car type", name: "type", value: "car", options: [
+          { id: nanoid(), value: "car", text: "car" },
+          { id: nanoid(), value: "bakkie", text: "bakkie" },
+          { id: nanoid(), value: "commercial", text: "commercial" },
+        ] },
     ],
   },
   {

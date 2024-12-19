@@ -13,22 +13,18 @@ import {getCarById} from "@/api/cars";
 
 // @ts-expect-error
 export default async function EditVehicle({params}) {
-  // const handleSave = (data: { blocks: BlockData[]; files: (File | null)[],video: string | null  }) => {
-  //   console.log("Saved Data:", data);
-  // };
-
     const {id} = params;
 
     const data = await getCarById(id);
 
-    for(const {inputs} of temporary) {
+    for(const { inputs} of temporary) {
         inputs.forEach(item => {
             if(data[item.name]) {
                 item.value = data[item.name];
             }
         })
     }
-
+    console.log(temporary);
   return (
       <ProtectedRoute>
           <Container>

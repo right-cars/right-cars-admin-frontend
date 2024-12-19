@@ -1,10 +1,8 @@
 import axios from "axios";
 
-// const {NEXT_PUBLIC_API_URL: baseURL} = process.env;
-
 const carsInstance = axios.create({
     // baseURL: "https://right-cars-backend-production.up.railway.app/api/cars",
-    baseURL: "http://localhost:4000/api/cars",
+    baseURL: `${process.env.NEXT_PUBLIC_API_URL}/cars`,
 })
 
 // @ts-expect-error

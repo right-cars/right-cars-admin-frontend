@@ -34,12 +34,12 @@ export default function VehicleFormBlock({
         control,
         setValue,
         setError,
-        reset,
         watch,
         formState: { errors } } = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
             ...defaultValues,
+            // @ts-expect-error
             images: initialImages,
             video: initialVideoUrl,
         },
@@ -132,7 +132,6 @@ export default function VehicleFormBlock({
         }
 
         try {
-            console.log(data)
             if(isAdd) {
                 await addCar(formData);
             }
@@ -150,7 +149,6 @@ export default function VehicleFormBlock({
 
    const onSubmit = handleSubmit(addVehicle);
 
-    //@ts-expect-error
     const [make, model] = watch(["make", "model"]);
     const title = `${make} ${model}`;
 
@@ -166,6 +164,7 @@ export default function VehicleFormBlock({
             inputs={block.inputs}
             // onInputChange={handleInputChange}
             // onFileChange={handleFileChange}
+              // @ts-expect-error
             control={control}
           />
         ))}

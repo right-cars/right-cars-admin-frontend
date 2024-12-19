@@ -8,15 +8,16 @@ interface CardProps {
   make: string;
   model: string;
   year: number;
+  status: string;
   // brand: string;
   price: string;
 }
 export default function CarCard(props: CardProps) {
-  const { img, year, make, model, price, id } = props;
+  const { img, year, make, model, price, id, status } = props;
   return (
     <li className="pb-6 bg-pureWhite flex flex-col gap-6 items-center rounded-lg border border-lightGray shadow-custom relative overflow-hidden">
       <div className="absolute top-[14px] right-[14px]">
-        <ActionsDropdown id={id} />
+        <ActionsDropdown status={status} id={id} />
       </div>
 
       <div className="h-[200px]">

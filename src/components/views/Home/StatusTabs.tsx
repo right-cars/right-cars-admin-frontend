@@ -64,6 +64,7 @@ export default function StatusTabs() {
                         model={car.model}
                         price={car.price}
                         year={car.year}
+                        status={car.status}
                     />
                 ))}
               </ul>}
