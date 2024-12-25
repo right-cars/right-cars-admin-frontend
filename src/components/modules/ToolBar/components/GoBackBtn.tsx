@@ -1,10 +1,16 @@
 "use client"
+
+import {useCallback} from "react";
+import {useRouter} from "next/navigation";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 
 export default function GoBackBtn() {
+    const router = useRouter();
+    const goBack = useCallback(()=> router.back(), []);
+
   return (
-    <Button variant="light" className="flex items-center gap-[6px] mb-6">
+    <Button onPress={goBack} variant="light" className="flex items-center gap-[6px] mb-6">
       <Image
         src="/icons/toolbar/arrow-left.svg"
         alt="back icon"
