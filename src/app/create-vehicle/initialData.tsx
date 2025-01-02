@@ -43,19 +43,19 @@ export const initialData = [
               { id: nanoid(), value: "Volkswagen", text: "Volkswagen" },
               { id: nanoid(), value: "Volvo", text: "Volvo" },
           ] },
-      { id: nanoid(), label: "km", name:"km", value: "" },
+      { id: nanoid(), label: "km", name:"km", value: "", mask: true },
       { id: nanoid(), label: "model", name: "model", value: "" },
       { id: nanoid(), label: "fuel", name: "fuel",  value: "gasoline", options: [
           { id: nanoid(), value: "gasoline", text: "gasoline" },
           { id: nanoid(), value: "diesel", text: "diesel" },
           { id: nanoid(), value: "hybrid", text: "hybrid" },
         ] },
-      { id: nanoid(), label: "year", name: "year", value: "" },
+      { id: nanoid(), label: "year", name: "year", value: "", mask: true },
       { id: nanoid(), label: "transmission", name: "transmission", value: "manul", options: [
           { id: nanoid(), value: "manul", text: "manul" },
           { id: nanoid(), value: "automt", text: "automt" },
         ] },
-      { id: nanoid(), label: "price", name: "price", value: "" },
+      { id: nanoid(), label: "price", name: "price", value: "", mask: true },
       { id: nanoid(), label: "drive type", name: "drive_type", value: "FWD", options: [
           { id: nanoid(), value: "FWD", text: "FWD" },
           { id: nanoid(), value: "RWD", text: "RWD" },
@@ -83,9 +83,9 @@ export const initialData = [
         ] },
       { id: nanoid(), label: "engine capacity", name: "engine_capacity", value: "" },
       { id: nanoid(), label: "variant", name: "variant", value: "" },
-      { id: nanoid(), label: "number of seats", name: "number_of_seats", value: "" },
+      { id: nanoid(), label: "number of seats", name: "number_of_seats", value: "", mask: true },
       { id: nanoid(), label: "colour", name: "colour", value: "" },
-      { id: nanoid(), label: "number of doors", name: "number_of_doors", value: "" },
+      { id: nanoid(), label: "number of doors", name: "number_of_doors", value: "", mask: true },
       { id: nanoid(), label: "stock number", name: "stock_number", value: "" },
     ],
   },
@@ -112,9 +112,9 @@ export const initialData = [
   {
     title: "perfomance",
     inputs: [
-      { id: nanoid(), label: "kilowatts", name: "kilowatts", value: "" },
+      { id: nanoid(), label: "kilowatts", name: "kilowatts", value: "", mask: true },
       { id: nanoid(), label: "cylinder layout", name: "cylinder_layout", value: "" },
-      { id: nanoid(), label: "gears", name: "gears", value: "" },
+      { id: nanoid(), label: "gears", name: "gears", value: "", mask: true },
     ],
   },
   {

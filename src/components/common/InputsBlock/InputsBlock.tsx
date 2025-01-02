@@ -60,6 +60,8 @@ const getInput = ({input, control, errors}) => {
           name={input.name}
           errors={errors}
           value={input.value}
+          // @ts-expect-error
+          mask={input.mask}
           // onChange={(newValue) => onInputChange(title, input.id, newValue)}
       />
   )

@@ -1,5 +1,5 @@
 import { Image, Input } from "@nextui-org/react";
-// import {useMask} from "@react-input/mask";
+import {useMask} from "@react-input/mask";
 import { InputProps } from "@/types/types";
 import {Controller} from "react-hook-form";
 
@@ -8,14 +8,17 @@ export default function InfoInput({
     name = "",
     control,
     value,
+    // @ts-expect-error
+    mask,
   // onChange,
   readOnly = false,
     errors,
 }: InputProps) {
-    // const inputRef = useMask({
-    //     mask: '_*',
-    //     replacement: { _: /\d/ },
-    // });
+    const inputRef = useMask({
+        mask: '_____________',
+        replacement: { _: /\d/ },
+    });
+    console.log(mask);
     return (
       <Controller
           name={name}
@@ -26,7 +29,7 @@ export default function InfoInput({
               variant="underlined"
               label={label}
               {...field}
-              // ref={inputRef}
+              ref={mask ? inputRef : null}
               // @ts-expect-error
               errorMessage={errors[name] ? errors[name]?.message : ""}
               // @ts-expect-error
