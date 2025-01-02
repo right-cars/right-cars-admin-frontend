@@ -1,4 +1,4 @@
-import ProtectedRoute from "@/components/routes/ProtectedRoute/ProtectedRoute";
+
 import Container from "@/components/common/Container";
 import Toolbar from "@/components/modules/ToolBar/Toolbar";
 import VehicleFormBlock from "@/components/modules/VehicleFormBlock/VehicleFormBlock";
@@ -26,11 +26,9 @@ export default async function EditVehicle({params}) {
     }
 
   return (
-      <ProtectedRoute>
           <Container>
               <Toolbar title={data.make} variant="edit" />
               <VehicleFormBlock id={id} variant="edit" initialImages={data.images} initialData={temporary} initialVideoUrl={data.video}  />
           </Container>
-      </ProtectedRoute>
   );
 }

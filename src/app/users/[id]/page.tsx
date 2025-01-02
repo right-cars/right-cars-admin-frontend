@@ -1,6 +1,6 @@
 "use client"
 
-import ProtectedRoute from "@/components/routes/ProtectedRoute/ProtectedRoute";
+import {getCookie} from "cookies-next/client";
 
 import Container from "@/components/common/Container";
 import Toolbar from "@/components/modules/ToolBar/Toolbar";
@@ -9,13 +9,10 @@ import FinApp from "@/components/views/EditUser/FinApp";
 import Security from "@/components/views/EditUser/Security";
 import UserInfoBlock from "@/components/views/EditUser/UserInfoBlock";
 
-import {useAuth} from "@/providers/AuthContext";
-
 export default function UserEdit() {
-    const {role} = useAuth();
+    const role = getCookie("role");
 
   return (
-      <ProtectedRoute>
           <Container>
               <Toolbar type="users" title="Humeniuk Alina" variant="edit" />
               <UserInfoBlock />
@@ -23,6 +20,5 @@ export default function UserEdit() {
               <FinApp />
               {role === "superadmin" ? <Security/> : <div />}
           </Container>
-      </ProtectedRoute>
   );
 }

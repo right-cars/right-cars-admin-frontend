@@ -1,18 +1,31 @@
 "use client";
 
-import { usePathname, redirect } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Button, Navbar, NavbarContent, NavbarItem } from "@nextui-org/react";
 import Image from "next/image";
+import {deleteCookie} from "cookies-next/client";
 
 import Logo from "./components/Logo";
 import Navigation from "./components/Navigation";
 import UserInfo from "./components/UserInfo";
 
-import {useAuth} from "@/providers/AuthContext";
+import {logout} from "@/api/admins";
 
 export default function Header() {
   const pathname = usePathname();
-  const {logout} = useAuth();
+  const router = useRouter();
+
+  const onLogout = async()=> {
+    try {
+      deleteCookie("role");
+      router.push("/");
+      await logout();
+      // redirect("/");
+    } catch (error) {
+      // @ts-expect-error
+      console.log(error.message);
+    }
+  }
 
   const isAuthPage = pathname === "/";
 
@@ -32,10 +45,7 @@ export default function Header() {
           <UserInfo />
           <NavbarItem>
             <Button
-              onClick={()=> {
-                logout();
-                redirect("/");
-              }}
+              onPress={onLogout}
               variant="light"
               className="flex gap-[10px]"
             >

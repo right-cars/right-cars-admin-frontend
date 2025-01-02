@@ -2,36 +2,32 @@
 
 import { Button, Input } from "@nextui-org/react";
 import {useForm, Controller} from "react-hook-form";
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
+import {setCookie} from "cookies-next/client";
 
-import {useAuth} from "@/providers/AuthContext";
+import {login} from "@/api/admins";
 
 export default function SignInForm() {
+    const router = useRouter();
     const {
         handleSubmit,
         setError,
         control,
         formState: { errors } } = useForm();
 
-    const {login} = useAuth();
-
     // @ts-expect-error
     const onSubmit = async (data) => {
-        if(!data.password) {
-            return setError("password", {
-                message: "Password must be exist"
-            });
-        }
 
-        if(data.password !== "admin" && data.password !== "superadmin") {
-            return setError("password", {
-                message: "Password invalid"
-            });
+        try {
+            const {role} = await login(data);
+            setCookie("role", role);
+            router.push("/vehicles");
+        } catch(error) {
+            console.log(error);
+            // setError("password", {
+            //     message: "Password invalid"
+            // });
         }
-
-        const role = data.password === "admin" ? "admin" : "superadmin";
-        login(role);
-        redirect(`/vehicles`);
     };
 
   return (

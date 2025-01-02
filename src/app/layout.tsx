@@ -31,10 +31,8 @@ export default function RootLayout({
       className={`${workSans.className} ${metrophobic.className}`}
     >
       <body className="bg-background text-textColor">
-      <AuthProvider>
         <Header />
         <main>{children}</main>
-      </AuthProvider>
       </body>
     </html>
   );

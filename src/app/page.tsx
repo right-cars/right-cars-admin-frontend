@@ -1,12 +1,12 @@
 import Image from "next/image";
 
-import PublicRoute from "@/components/routes/PublicRoute/PublicRoute";
+// import PublicRoute from "@/components/routes/PublicRoute/PublicRoute";
 import SignInForm from "@/components/views/SignIn/SignInForm";
 
 export default function SignIn() {
 
     return (
-        <PublicRoute>
+
             <section className="flex items-center justify-end">
                 <div className="pl-[232px] pt-20 pb-[135px]">
                     <h1 className="text-lg font-bold uppercase text-black mb-4 mr-[8px]">
@@ -28,7 +28,7 @@ export default function SignIn() {
                     />
                 </div>
             </section>
-        </PublicRoute>
+
     );
 }
 
