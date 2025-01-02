@@ -1,39 +1,32 @@
-import { Image, Input } from "@nextui-org/react";
-import {useMask} from "@react-input/mask";
+import { Image, Switch } from "@nextui-org/react";
 import { InputProps } from "@/types/types";
 import {Controller} from "react-hook-form";
 
-export default function InfoInput({
+export default function ToggleInput({
   label,
     name = "",
     control,
     value,
-    // @ts-expect-error
-    mask,
   // onChange,
   readOnly = false,
-    errors,
+    // errors,
 }: InputProps) {
-    const inputRef = useMask({
-        mask: '_____________',
-        replacement: { _: /\d/ },
-    });
 
     return (
       <Controller
           name={name}
           control={control}
           defaultValue={value}
-          render={({ field }) => <Input
+          render={({ field }) => <Switch
               isReadOnly={readOnly ? true : false}
-              variant="underlined"
-              label={label}
+              // variant="underlined"
               {...field}
-              ref={mask ? inputRef : null}
+              // defaultValue={value}
+
+              // errorMessage={errors[name] ? errors[name]?.message : ""}
               // @ts-expect-error
-              errorMessage={errors[name] ? errors[name]?.message : ""}
-              // @ts-expect-error
-              isInvalid={Boolean(errors[name])}
+              defaultSelected={value}
+              // isInvalid={Boolean(errors[name])}
               endContent={
                   !readOnly && (
                       <Image
@@ -44,8 +37,7 @@ export default function InfoInput({
                           className="flex-shrink-0 cursor-pointer"
                       />
                   )
-              }
-          />}
+              }>{label}</Switch>}
       />
     )
 }

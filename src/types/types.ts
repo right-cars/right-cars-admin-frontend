@@ -18,6 +18,7 @@ export interface BlockData {
     value: string;
     name: string;
     isFileInput?: boolean;
+    toggle?: boolean;
   }[];
 }
 

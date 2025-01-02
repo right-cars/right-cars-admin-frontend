@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/ToggleInput.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/create-vehicle/initialData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/create-vehicle/initialData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/create-vehicle/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/create-vehicle/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/edit/[id]/temporary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit/[id]/temporary.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/Buttons/SaveOrCancel.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/Buttons/SaveOrCancel.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/InputsBlock/InfoInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/InfoInput.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/InputsBlock/InputsBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/InputsBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VinCode.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VinCode.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/EditUser/Security.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/EditUser/Security.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +51,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projects/right-cars/right-cars-admin-frontend/src/components/common/InputsBlock&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -53,6 +62,9 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\common\InputsBlock" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\cars\right-cars-admin-frontend\src\app\_not-found" />
     </key>
@@ -95,7 +107,8 @@
       <workItem from="1735764548502" duration="7259000" />
       <workItem from="1735819804414" duration="68000" />
       <workItem from="1735819894729" duration="1364000" />
-      <workItem from="1735821394391" duration="6804000" />
+      <workItem from="1735821394391" duration="8515000" />
+      <workItem from="1735838098950" duration="6913000" />
     </task>
     <servers />
   </component>

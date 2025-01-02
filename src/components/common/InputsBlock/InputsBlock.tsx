@@ -1,6 +1,7 @@
 import FileUploadInput from "./FileUploadInput";
 import InfoInput from "./InfoInput";
 import SelectInput from "./SelectInput";
+import ToggleInput from "@/components/common/InputsBlock/ToggleInput";
 import {Control} from "react-hook-form";
 
 interface InputData {
@@ -26,6 +27,10 @@ interface InputsBlockProps {
 
 // @ts-expect-error
 const getInput = ({input, control, errors}) => {
+  if(input.toggle) {
+    return <ToggleInput key={input.id} control={control} errors={errors} name={input.name} value={input.value} label={input.label} />;
+  }
+
   if(input.isFileInput)
     return (
         <FileUploadInput

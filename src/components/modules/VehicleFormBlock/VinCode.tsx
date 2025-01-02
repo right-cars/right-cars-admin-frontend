@@ -26,7 +26,7 @@ export default function VinCode() {
             radius="full"
             color="primary"
             variant="flat"
-            onClick={handleCheck}
+            onPress={handleCheck}
           >
             Check it
           </Button>

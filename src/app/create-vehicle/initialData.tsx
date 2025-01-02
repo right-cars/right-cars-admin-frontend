@@ -53,7 +53,7 @@ export const initialData = [
       { id: nanoid(), label: "year", name: "year", value: "", mask: true },
       { id: nanoid(), label: "transmission", name: "transmission", value: "manul", options: [
           { id: nanoid(), value: "manul", text: "manul" },
-          { id: nanoid(), value: "automt", text: "automt" },
+          { id: nanoid(), value: "automatic", text: "automatic" },
         ] },
       { id: nanoid(), label: "price", name: "price", value: "", mask: true },
       { id: nanoid(), label: "drive type", name: "drive_type", value: "FWD", options: [
@@ -92,7 +92,7 @@ export const initialData = [
   {
     title: "conditions",
     inputs: [
-      { id: nanoid(), label: "vehicle service History", name: "vehicle_service_history",value: "full SH", options: [
+      { id: nanoid(), label: "vehicle service History", name: "vehicle_service_history", value: "full SH", options: [
           { id: nanoid(), value: "full SH", text: "full SH" },
           { id: nanoid(), value: "Partial", text: "Partial" },
           { id: nanoid(), value: "Null", text: "Null" },
@@ -104,9 +104,9 @@ export const initialData = [
         value: "",
         isFileInput: true,
       },
-      { id: nanoid(), label: "spare key", name: "spare_key", value: "" },
+      { id: nanoid(), label: "spare key", name: "spare_key", value: true, toggle: true },
       { id: nanoid(), label: "condition report", name: "condition_report", value: "", isFileInput: true },
-      { id: nanoid(), label: "Warranty", name: "warranty", value: "" },
+      { id: nanoid(), label: "Warranty", name: "warranty",  value: true, toggle: true  },
     ],
   },
   {

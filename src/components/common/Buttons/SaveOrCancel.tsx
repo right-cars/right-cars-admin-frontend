@@ -15,7 +15,7 @@ export default function SaveOrCancel({ title, variant, onSave, isOpen }: BtnProp
   return (
     <div className="flex gap-[8px] mt-10 justify-end">
       <Button
-        onClick={onSave}
+        onPress={onSave}
         color="primary"
         radius="full"
       >

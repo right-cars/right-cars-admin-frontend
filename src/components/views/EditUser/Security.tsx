@@ -19,7 +19,7 @@ export default function Security() {
                 radius="full"
                 variant="flat"
                 color="primary"
-                onClick={toggleVisibility}
+                onPress={toggleVisibility}
                 aria-label="toggle password visibility"
               >
                 view

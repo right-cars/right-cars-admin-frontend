@@ -7,6 +7,7 @@ import VehicleFormBlock from "@/components/modules/VehicleFormBlock/VehicleFormB
 
 import { initialData } from "./initialData";
 
+console.log(initialData)
 export default function CreateVehicle() {
   return (
 
