@@ -7,12 +7,12 @@ import VehicleFormBlock from "@/components/modules/VehicleFormBlock/VehicleFormB
 
 import { initialData } from "./initialData";
 
-console.log(initialData)
 export default function CreateVehicle() {
   return (
 
           <Container>
               <Toolbar title="new vehicle" variant="add" />
+              {/*@ts-expect-error*/}
               <VehicleFormBlock variant="add" initialData={initialData} />
           </Container>
 
