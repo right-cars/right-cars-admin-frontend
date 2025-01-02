@@ -12,7 +12,6 @@ export default function InfoInput({
   readOnly = false,
     errors,
 }: InputProps) {
-
     // const inputRef = useMask({
     //     mask: '_*',
     //     replacement: { _: /\d/ },

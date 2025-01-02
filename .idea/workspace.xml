@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/api/admins.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/create-vehicle/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/create-vehicle/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/users/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/users/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/users/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/users/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/vehicles/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/vehicles/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modules/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/SignIn/SignInForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/SignIn/SignInForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/create-vehicle/initialData.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/create-vehicle/initialData.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/InputsBlock/InfoInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/InfoInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/InputsBlock/SelectInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/SelectInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/Header/components/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/Header/components/Logo.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +97,7 @@
       <workItem from="1735764548502" duration="7259000" />
       <workItem from="1735819804414" duration="68000" />
       <workItem from="1735819894729" duration="1364000" />
-      <workItem from="1735821394391" duration="1667000" />
+      <workItem from="1735821394391" duration="5558000" />
     </task>
     <servers />
   </component>
