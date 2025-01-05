@@ -29,7 +29,7 @@ export default async function EditVehicle({params}) {
           <Container>
               <Toolbar title={data.make} variant="edit" />
               {/*@ts-expect-error*/}
-              <VehicleFormBlock id={id} variant="edit" initialImages={data.images} initialData={temporary} initialVideoUrl={data.video}  />
+              <VehicleFormBlock initialMainImage={data.mainImage} id={id} variant="edit" initialImages={data.images} initialData={temporary} initialVideoUrl={data.video}  />
           </Container>
   );
 }

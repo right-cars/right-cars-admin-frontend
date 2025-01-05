@@ -2,12 +2,11 @@ import { Button } from "@nextui-org/react"
 import Image from "next/image"
 
 interface Props {
-  handleFileChange: (e: React.ChangeEvent<HTMLInputElement>, index: number) => void;
-  images: (File | string | null)[];
+  handleFileChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export default function UploadBtn({ handleFileChange, images }: Props) {
-     const availableIndex = images.indexOf(null);
+export default function UploadBtn({ handleFileChange }: Props) {
+
     return (
           <div className="mb-8">
         <Button
@@ -17,10 +16,10 @@ export default function UploadBtn({ handleFileChange, images }: Props) {
           className="flex items-center gap-[8px]"
         >
           <label
-            htmlFor="upload-images"
+            htmlFor="upload-main-image"
             className="cursor-pointer flex items-center gap-[8px]"
           >
-            <p>Upload pictures</p>
+            <p>Upload main picture</p>
             <Image
               src="/icons/upload.svg"
               alt="upload icon"
@@ -30,16 +29,11 @@ export default function UploadBtn({ handleFileChange, images }: Props) {
           </label>
         </Button>
         <input
-          id="upload-images"
+          id="upload-main-image"
           type="file"
           accept="image/*"
           className="hidden"
-          multiple
-          onChange={(e) => {
-          if (availableIndex !== -1) {
-            handleFileChange(e, availableIndex);
-          }
-        }}
+          onChange={handleFileChange}
         />
         </div>
     )

@@ -59,7 +59,7 @@ export default function StatusTabs() {
                     <CarCard
                         key={car._id}
                         id={car._id}
-                        img={car.images[0]}
+                        img={car.mainImage}
                         make={car.make}
                         model={car.model}
                         price={car.price}

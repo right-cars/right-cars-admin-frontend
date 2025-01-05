@@ -9,6 +9,7 @@ import { usePathname } from "next/navigation";
 import { VehicleFormBlockProps, BlockData } from "@/types/types";
 
 import InputsBlock from "@/components/common/InputsBlock/InputsBlock";
+import MainImagesBlock from "@/components/common/MainImagesBlock/MainImagesBlock";
 import ImageBlock from "@/components/common/UploadImagesBlock/ImageBlock";
 import VideoBlock from "@/components/common/VideoBlock/VideoBlock";
 import SaveOrCancel from "@/components/common/Buttons/SaveOrCancel";
@@ -23,6 +24,7 @@ export default function VehicleFormBlock({
   // variant,
     id,
   initialData,
+    initialMainImage,
   initialImages,
    initialVideoUrl
 }: VehicleFormBlockProps) {
@@ -40,6 +42,7 @@ export default function VehicleFormBlock({
         defaultValues: {
             ...defaultValues,
             // @ts-expect-error
+            mainImage: initialMainImage,
             images: initialImages,
             video: initialVideoUrl,
         },
@@ -111,6 +114,11 @@ export default function VehicleFormBlock({
             return setError("images", {message: "Need upload images"});
         }
 
+        if(!data.mainImage) {
+            // @ts-expect-error
+            return setError("mainImage", {message: "Need upload main image"});
+        }
+
         // @ts-expect-error
         data.images = data.images.filter(item => Boolean(item));
 
@@ -168,6 +176,11 @@ export default function VehicleFormBlock({
             control={control}
           />
         ))}
+          <MainImagesBlock
+              //@ts-expect-error
+              setValue={setValue}
+              errors={errors}
+              initialMainImage={initialMainImage} />
         <ImageBlock
             //@ts-expect-error
             setValue={setValue}

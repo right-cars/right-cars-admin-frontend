@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/common/MainImagesBlock/Gallery.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/MainImagesBlock/MainImagesBlock.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/MainImagesBlock/RemoveBtn.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/MainImagesBlock/UploadBtn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/UploadImagesBlock/Gallery.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/UploadImagesBlock/Gallery.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/UploadImagesBlock/UploadBtn.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/UploadImagesBlock/UploadBtn.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Home/StatusTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/StatusTabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types/types.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +50,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projects/right-cars/right-cars-admin-frontend/src/components/common/InputsBlock&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projects/right-cars/right-cars-admin-frontend/src/components/common&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -52,6 +62,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\common" />
       <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\common\InputsBlock" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -97,7 +108,9 @@
       <workItem from="1735819804414" duration="68000" />
       <workItem from="1735819894729" duration="1364000" />
       <workItem from="1735821394391" duration="8515000" />
-      <workItem from="1735838098950" duration="7325000" />
+      <workItem from="1735838098950" duration="14516000" />
+      <workItem from="1735919312438" duration="2144000" />
+      <workItem from="1736015795018" duration="7957000" />
     </task>
     <servers />
   </component>

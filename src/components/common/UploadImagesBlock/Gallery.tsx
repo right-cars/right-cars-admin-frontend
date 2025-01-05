@@ -70,6 +70,7 @@ export default function Gallery({
                   type="file"
                   accept="image/*"
                   className="hidden"
+                  multiple
                   onChange={(e) => handleFileChange(e, index)}
                 />
               </label>
