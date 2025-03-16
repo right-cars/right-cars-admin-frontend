@@ -22,11 +22,10 @@ export default function SignInForm() {
             const {role} = await login(data);
             setCookie("role", role);
             router.push("/vehicles");
-        } catch(error) {
-            console.log(error);
-            // setError("password", {
-            //     message: "Password invalid"
-            // });
+        } catch {
+            setError("password", {
+                message: "Password invalid"
+            });
         }
     };
 

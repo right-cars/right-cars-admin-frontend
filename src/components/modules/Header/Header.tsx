@@ -17,9 +17,9 @@ export default function Header() {
 
   const onLogout = async()=> {
     try {
+      await logout();
       deleteCookie("role");
       router.push("/");
-      await logout();
       // redirect("/");
     } catch (error) {
       // @ts-expect-error

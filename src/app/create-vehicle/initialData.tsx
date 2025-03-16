@@ -51,8 +51,8 @@ export const initialData = [
           { id: nanoid(), value: "hybrid", text: "hybrid" },
         ] },
       { id: nanoid(), label: "year", name: "year", value: "", mask: true },
-      { id: nanoid(), label: "transmission", name: "transmission", value: "manul", options: [
-          { id: nanoid(), value: "manul", text: "manul" },
+      { id: nanoid(), label: "transmission", name: "transmission", value: "manual", options: [
+          { id: nanoid(), value: "manual", text: "manual" },
           { id: nanoid(), value: "automatic", text: "automatic" },
         ] },
       { id: nanoid(), label: "price", name: "price", value: "", mask: true },
