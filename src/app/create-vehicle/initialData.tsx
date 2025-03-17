@@ -81,7 +81,7 @@ export const initialData = [
           { id: nanoid(), value: "roadster", text: "roadster" },
           { id: nanoid(), value: "Van", text: "Van" },
         ] },
-      { id: nanoid(), label: "engine capacity", name: "engine_capacity", value: "" },
+      { id: nanoid(), label: "engine capacity", name: "engine_capacity", value: "", mask: true },
       { id: nanoid(), label: "variant", name: "variant", value: "" },
       { id: nanoid(), label: "number of seats", name: "number_of_seats", value: "", mask: true },
       { id: nanoid(), label: "colour", name: "colour", value: "" },
