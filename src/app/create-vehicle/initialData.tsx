@@ -45,8 +45,8 @@ export const initialData = [
           ] },
       { id: nanoid(), label: "km", name:"km", value: "", mask: true },
       { id: nanoid(), label: "model", name: "model", value: "" },
-      { id: nanoid(), label: "fuel", name: "fuel",  value: "gasoline", options: [
-          { id: nanoid(), value: "gasoline", text: "gasoline" },
+      { id: nanoid(), label: "fuel", name: "fuel",  value: "petrol", options: [
+          { id: nanoid(), value: "petrol", text: "petrol" },
           { id: nanoid(), value: "diesel", text: "diesel" },
           { id: nanoid(), value: "hybrid", text: "hybrid" },
         ] },
@@ -78,6 +78,7 @@ export const initialData = [
           { id: nanoid(), value: "station wagon", text: "station wagon" },
           { id: nanoid(), value: "SUV", text: "SUV" },
           { id: nanoid(), value: "coupe", text: "coupe" },
+          { id: nanoid(), value: "hatchback", text: "hatchback" },
           { id: nanoid(), value: "roadster", text: "roadster" },
           { id: nanoid(), value: "Van", text: "Van" },
         ] },

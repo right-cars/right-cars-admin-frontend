@@ -26,7 +26,6 @@ export const CarsProvider = ({ children }: { children: ReactNode }) => {
             }
             finally {
                 setLoading(false);
-
             }
         }
 
@@ -138,6 +137,6 @@ export const CarsProvider = ({ children }: { children: ReactNode }) => {
 
 export const useCars = () => {
     const context = useContext(CarsContext);
-    if (!context) throw new Error('useAuth must be used within an AuthProvider');
+    if (!context) throw new Error('useAuth must be used within an CarsProvider');
     return context;
 };
