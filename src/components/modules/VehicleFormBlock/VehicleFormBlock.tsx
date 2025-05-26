@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {useForm} from "react-hook-form";
 import {useDisclosure} from "@nextui-org/react";
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -36,6 +36,9 @@ export default function VehicleFormBlock({
         control,
         setValue,
         setError,
+        setFocus,
+        register,
+        clearErrors,
         watch,
         formState: { errors } } = useForm({
         resolver: yupResolver(schema),
@@ -51,53 +54,13 @@ export default function VehicleFormBlock({
   const [blocks] = useState<BlockData[]>(initialData);
   const pathname = usePathname();
 
-  // const [files, setFiles] = useState<(File | null)[]>([]);
-  // const [ ,setVideoUrl] = useState<string | null>(null);
-
-  // const handleInputChange = (
-  //   blockTitle: string,
-  //   inputId: string,
-  //   newValue: string
-  // ) => {
-  //   setBlocks((prevBlocks) =>
-  //     prevBlocks.map((block) =>
-  //       block.title === blockTitle
-  //         ? {
-  //             ...block,
-  //             inputs: block.inputs.map((input) =>
-  //               input.id === inputId ? { ...input, value: newValue } : input
-  //             ),
-  //           }
-  //         : block
-  //     )
-  //   );
-  // };
-
-  // const handleFileChange = (inputId: string, file: File | null) => {
-  //   setFiles((prevFiles) => {
-  //     const updatedFiles = [...prevFiles];
-  //     const fileIndex = updatedFiles.findIndex((file) => file === null);
-  //     if (fileIndex >= 0) {
-  //       updatedFiles[fileIndex] = file;
-  //     } else {
-  //       updatedFiles.push(file);
-  //     }
-  //     return updatedFiles;
-  //   });
-  // };
-
-  // const handleSave = () => {
-  //   const dataToSave = {
-  //     blocks,
-  //     files,
-  //     video: videoUrl,
-  //   };
-  //   onSave(dataToSave);
-  //
-  //   setBlocks(initialData);
-  //   setFiles([]);
-  //   setVideoUrl(null);
-  // };
+    useEffect(() => {
+        const firstError = Object.keys(errors)[0];
+        if (firstError) {
+            //@ts-expect-error
+            setFocus(firstError);
+        }
+    }, [errors, setFocus]);
 
    const handleVideoUrlChange = (url: string | null) => {
        // @ts-expect-error
@@ -124,21 +87,22 @@ export default function VehicleFormBlock({
 
         const formData = new FormData();
         // formData.append("images", data.images);
-        formData.append("roadworthy_voucher", data.roadworthy_voucher);
-        formData.append("condition_report", data.condition_report);
+        formData.append("dekraReport", data.dekraReport);
+        formData.append("conditionReport", data.conditionReport);
+        formData.append("conditionReport", data.mainImage);
         const textData = {...data};
         // @ts-expect-error
         textData.images.forEach(image => formData.append('images', image));
 
         delete textData.images;
-        delete textData.roadworthy_voucher;
-        delete textData.condition_report;
+        delete textData.dekraReport;
+        delete textData.conditionReport;
 
         for(const [key, value] of Object.entries(textData)) {
             // @ts-expect-error
             if(value) formData.append(key, value);
         }
-
+        console.log(formData);
         try {
             if(isAdd) {
                 await addCar(formData);
@@ -163,32 +127,37 @@ export default function VehicleFormBlock({
   return (
     <form className="pb-[120px]">
       {/*{variant === "add" && <VinCode />}*/}
-      <div className="flex flex-col gap-20">
-        {blocks.map((block) => (
-          <InputsBlock
-            key={block.title}
-            errors={errors}
-            title={block.title}
-            inputs={block.inputs}
-            // onInputChange={handleInputChange}
-            // onFileChange={handleFileChange}
-              // @ts-expect-error
-            control={control}
-          />
-        ))}
-          <MainImagesBlock
-              //@ts-expect-error
-              setValue={setValue}
-              errors={errors}
-              initialMainImage={initialMainImage} />
-        <ImageBlock
-            //@ts-expect-error
-            setValue={setValue}
-            errors={errors}
-            initialImages={initialImages} />
-       <VideoBlock onSaveVideoUrl={handleVideoUrlChange} initialVideoUrl={initialVideoUrl} />
-      </div>
-      <SaveOrCancel title={title} variant="publish" isOpen={isOpen} onSave={onSubmit} />
+        <div className="flex flex-col gap-20">
+            {blocks.map((block) => (
+                <InputsBlock
+                    key={block.title}
+                    errors={errors}
+                    title={block.title}
+                    inputs={block.inputs}
+                    // onInputChange={handleInputChange}
+                    // onFileChange={handleFileChange}
+                    // @ts-expect-error
+                    control={control}
+                    register={register}
+                />
+            ))}
+            <MainImagesBlock
+                //@ts-expect-error
+                setValue={setValue}
+                errors={errors}
+                //@ts-expect-error
+                clearError={() => clearErrors("mainImage")}
+                initialMainImage={initialMainImage}/>
+            <ImageBlock
+                //@ts-expect-error
+                setValue={setValue}
+                errors={errors}
+                //@ts-expect-error
+                clearError={() => clearErrors("images")}
+                initialImages={initialImages}/>
+            <VideoBlock onSaveVideoUrl={handleVideoUrlChange} initialVideoUrl={initialVideoUrl}/>
+        </div>
+        <SaveOrCancel title={title} variant="publish" isOpen={isOpen} onSave={onSubmit} />
     </form>
   );
 }

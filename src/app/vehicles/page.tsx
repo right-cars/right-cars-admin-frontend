@@ -9,14 +9,12 @@ import {CarsProvider} from "@/providers/CarsContext";
 
 export default function VehiclesPage() {
     return (
-
             <Container>
                 <CarsProvider>
                     <Toolbar title="vehicles" />
                     <StatusTabs/>
                 </CarsProvider>
             </Container>
-
     );
 }
 

@@ -6,14 +6,14 @@ export async function middleware(req: NextRequest) {
 
     if (
         pathname.startsWith("/favicon") ||
-        pathname.startsWith('/_next/') || // Для Next.js-ресурсов
-        pathname.startsWith('/static/') || // Ваши статические ресурсы
-        /\.(png|jpg|jpeg|gif|svg|ico|webp|ttf|otf|woff|woff2|eot|css|js)$/.test(pathname) // Расширения файлов
+        pathname.startsWith('/_next/') ||
+        pathname.startsWith('/static/') ||
+        /\.(png|jpg|jpeg|gif|svg|ico|webp|ttf|otf|woff|woff2|eot|css|js)$/.test(pathname)
     ) {
         return NextResponse.next();
     }
 
-    const isAuthenticated = Boolean(req.cookies.get("role")); // Проверяем сессию
+    const isAuthenticated = Boolean(req.cookies.get("role"));
 
     const isPublicRoute = req.nextUrl.pathname === "/";
     const isPrivateRoute = req.nextUrl.pathname !== "/";

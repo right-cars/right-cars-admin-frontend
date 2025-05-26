@@ -14,6 +14,7 @@ interface CardProps {
 }
 export default function CarCard(props: CardProps) {
   const { img, year, make, model, price, id, status } = props;
+
   return (
     <li className="pb-6 bg-pureWhite flex flex-col gap-6 items-center rounded-lg border border-lightGray shadow-custom relative overflow-hidden">
       <div className="absolute top-[14px] right-[14px]">
@@ -23,7 +24,7 @@ export default function CarCard(props: CardProps) {
       <div className="h-[200px]">
         <Image
           src={img}
-          alt={make}
+          alt={`${make} ${model}`}
           width={272}
           height={200}
           className="h-full w-full object-cover"

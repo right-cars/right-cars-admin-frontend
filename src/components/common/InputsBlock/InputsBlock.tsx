@@ -26,7 +26,7 @@ interface InputsBlockProps {
 }
 
 // @ts-expect-error
-const getInput = ({input, control, errors}) => {
+const getInput = ({register, input, control, errors}) => {
   if(input.toggle) {
     return <ToggleInput key={input.id} control={control} errors={errors} name={input.name} value={input.value} label={input.label} />;
   }
@@ -67,6 +67,7 @@ const getInput = ({input, control, errors}) => {
           value={input.value}
           // @ts-expect-error
           mask={input.mask}
+          register={register}
           // onChange={(newValue) => onInputChange(title, input.id, newValue)}
       />
   )
@@ -79,6 +80,8 @@ export default function InputsBlock({
   // onInputChange,
   // onFileChange,
   control,
+    // @ts-expect-error
+    register,
 }: InputsBlockProps) {
 
   return (
@@ -86,7 +89,7 @@ export default function InputsBlock({
       <h2 className="text-md font-bold mb-14 text-black uppercase">{title}</h2>
       <div className="p-8 bg-pureWhite rounded-[24px] shadow-custom ">
         <div className="grid grid-cols-2 gap-4">
-          {inputs.map((input) => getInput({input, control, errors}))}
+          {inputs.map((input) => getInput({register, input, control, errors}))}
         </div>
       </div>
     </div>

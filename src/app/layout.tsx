@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Metrophobic, Work_Sans } from "next/font/google";
-import {AuthProvider} from "@/providers/AuthContext";
+// import {AuthProvider} from "@/providers/AuthContext";
 import Header from "../components/modules/Header/Header";
 
 import "./globals.css";
@@ -25,6 +25,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html
       lang="en"

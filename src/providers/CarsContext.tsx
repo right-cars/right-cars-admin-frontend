@@ -8,20 +8,25 @@ const CarsContext = createContext([]);
 
 export const CarsProvider = ({ children }: { children: ReactNode }) => {
     const [cars, setCars] = useState([]);
+    const [current, setCurrent] = useState("idle");
     const [loading, setLoading] = useState(false);
     const [status, setStatus] = useState<string | number>("all");
     const [search, setSearch] = useState("");
     const [sort, setSort] = useState("default");
-    const [type, setType] = useState("all");
+    const [vehicleCategory, setVehicleCategory] = useState("all");
 
     useEffect(()=> {
         const fetchCars = async()=> {
             setLoading(true);
+            setCars([]);
+            setCurrent("pending");
             try {
                 const data = await getAllCars();
                 setCars(data);
+                setCurrent("success");
             }
             catch(error) {
+                setCurrent("error");
                 console.log(error);
             }
             finally {
@@ -30,7 +35,7 @@ export const CarsProvider = ({ children }: { children: ReactNode }) => {
         }
 
         fetchCars();
-    }, [status, search, sort, type]);
+    }, [status, search, sort, vehicleCategory]);
 
     // @ts-expect-error
     const deleteCar = async id => {
@@ -81,18 +86,18 @@ export const CarsProvider = ({ children }: { children: ReactNode }) => {
     });
 
     filteredCars = filteredCars.filter(car => {
-        switch (type) {
+        switch (vehicleCategory) {
             case "all":
                 return true;
             case "car":
                 // @ts-expect-error
-                return car.type === "car";
+                return car.vehicleCategory === "car";
             case "bakkie":
                 // @ts-expect-error
-                return car.type === "bakkie";
+                return car.vehicleCategory === "bakkie";
             case "commercial":
                 // @ts-expect-error
-                return car.type === "commercial";
+                return car.vehicleCategory === "commercial";
             default:
                 return true;
         }
@@ -122,9 +127,10 @@ export const CarsProvider = ({ children }: { children: ReactNode }) => {
         status,
         setStatus,
         loading,
+        current,
         setLoading,
-        type,
-        setType,
+        vehicleCategory,
+        setVehicleCategory,
         setSearch,
         setSort,
         deleteCar,

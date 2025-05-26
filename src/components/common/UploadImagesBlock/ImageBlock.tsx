@@ -7,8 +7,8 @@ import Gallery from "./Gallery";
 
 
 // @ts-expect-error
-export default function ImageBlock({ errors, setValue, initialImages }: { initialImages?: (File | string | null)[] }) {
-  const [images, setImages] = useState<(File | string | null)[]>(Array(12).fill(null));
+export default function ImageBlock({ clearError, errors, setValue, initialImages }: { initialImages?: (File | string | null)[] }) {
+  const [images, setImages] = useState<(File | string | null)[]>(Array(20).fill(null));
 
   useEffect(() => {
     if (initialImages) {
@@ -20,11 +20,17 @@ export default function ImageBlock({ errors, setValue, initialImages }: { initia
     e: React.ChangeEvent<HTMLInputElement>,
     index: number
   ) => {
-    const file = e.target.files ? e.target.files[0]: null;
-    const updatedImages = [...images];
-    updatedImages[index] = file;
-    setImages(updatedImages);
-    setValue("images", updatedImages);
+    if(e.target.files?.length) {
+      clearError();
+      const files = Array.from(e.target.files);
+      const updatedImages = [...images];
+      for(const file of files) {
+        updatedImages[index] = file;
+        index += 1;
+      }
+      setImages(updatedImages);
+      setValue("images", updatedImages);
+    }
   };
 
   const removeImage = (index: number) => {

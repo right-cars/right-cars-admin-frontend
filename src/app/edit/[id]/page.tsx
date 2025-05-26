@@ -4,8 +4,9 @@ import Toolbar from "@/components/modules/ToolBar/Toolbar";
 import VehicleFormBlock from "@/components/modules/VehicleFormBlock/VehicleFormBlock";
 
 // import { BlockData } from "@/types/types";
-import { temporary } from "./temporary";
+// import { temporary } from "./temporary";
 // import { tepmoraryImgs } from "./temporaryImgs";
+import initialCarData from "@/data/initialCarData";
 
 // const temporaryVideoUrl = "https://youtu.be/D9G1VOjN_84?si=GIZHe07Ugzx-u9AM";
 
@@ -17,7 +18,7 @@ export default async function EditVehicle({params}) {
 
     const data = await getCarById(id);
 
-    for(const { inputs} of temporary) {
+    for(const { inputs} of initialCarData) {
         inputs.forEach(item => {
             if(data[item.name]) {
                 item.value = data[item.name];
@@ -27,9 +28,9 @@ export default async function EditVehicle({params}) {
 
   return (
           <Container>
-              <Toolbar title={data.make} variant="edit" />
+              <Toolbar title={`${data.make} ${data.model} ${data.year}`} variant="edit" />
               {/*@ts-expect-error*/}
-              <VehicleFormBlock initialMainImage={data.mainImage} id={id} variant="edit" initialImages={data.images} initialData={temporary} initialVideoUrl={data.video}  />
+              <VehicleFormBlock initialMainImage={data.mainImage} id={id} variant="edit" initialImages={data.images} initialData={initialCarData} initialVideoUrl={data.video}  />
           </Container>
   );
 }

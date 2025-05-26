@@ -6,7 +6,7 @@ import UploadBtn from "./UploadBtn";
 import Gallery from "./Gallery";
 
 // @ts-expect-error
-export default function MainImagesBlock({ errors, setValue, initialMainImage }: { initialMainImage?: (File | string | null) }) {
+export default function MainImagesBlock({ clearError, errors, setValue, initialMainImage }: { initialMainImage?: (File | string | null) }) {
   const [image, setImage] = useState<(File | string | null)>(null);
 
   useEffect(() => {
@@ -19,6 +19,7 @@ export default function MainImagesBlock({ errors, setValue, initialMainImage }: 
     e: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const file = e.target.files ? e.target.files[0]: null;
+    clearError();
     setImage(file);
     setValue("mainImage", file);
   };

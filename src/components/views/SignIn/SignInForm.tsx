@@ -17,7 +17,6 @@ export default function SignInForm() {
 
     // @ts-expect-error
     const onSubmit = async (data) => {
-
         try {
             const {role} = await login(data);
             setCookie("role", role);

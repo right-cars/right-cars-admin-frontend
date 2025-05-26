@@ -1,8 +1,9 @@
 "use client";
 import { useState } from "react";
 import { Tab, Tabs } from "@nextui-org/react";
-import UsersTable from "./UserTable";
-import { temporaryData } from "./temporaryData";
+// import UsersTable from "./UserTable";
+import NotFoundData from "@/components/common/NotFoundData/NotFoundData";
+// import { temporaryData } from "./temporaryData";
 
 const tabs = [
   { name: "ALL", key: "all" },
@@ -14,20 +15,20 @@ const tabs = [
 export default function UsersTabs() {
   const [selectedKey, setSelectedKey] = useState<string | number>("all");
 
-  const filteredUsers = temporaryData.filter((user) => {
-    switch (selectedKey) {
-      case "all":
-        return true;
-      case "regular":
-        return user.regular;
-      case "dealer":
-        return user.dealer;
-      case "archive":
-        return user.archive;
-      default:
-        return true;
-    }
-  });
+  // const filteredUsers = temporaryData.filter((user) => {
+  //   switch (selectedKey) {
+  //     case "all":
+  //       return true;
+  //     case "regular":
+  //       return user.regular;
+  //     case "dealer":
+  //       return user.dealer;
+  //     case "archive":
+  //       return user.archive;
+  //     default:
+  //       return true;
+  //   }
+  // });
 
   return (
     <Tabs
@@ -54,7 +55,8 @@ export default function UsersTabs() {
           className="uppercase"
           style={{ fontWeight: "bold" }}
         >
-          <UsersTable data={filteredUsers} />
+          <NotFoundData>Not found users</NotFoundData>
+          {/*<UsersTable data={filteredUsers} />*/}
         </Tab>
       ))}
     </Tabs>

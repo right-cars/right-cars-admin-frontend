@@ -4,7 +4,6 @@ import {Controller} from "react-hook-form";
 
 // @ts-expect-error
 export default function SelectInput({label, name = "", control, value, options,}) {
-
     return (
             <Controller
                 name={name}
