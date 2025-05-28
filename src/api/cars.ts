@@ -12,7 +12,6 @@ export const addCar = async car => {
             'Content-Type': 'multipart/form-data', // Заголовок укажется автоматически, но можно задать явно
         },
     });
-    console.log(data);
     return data;
 }
 

@@ -5,29 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/common/NotFoundData/NotFoundData.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/initialCarData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/create-vehicle/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/create-vehicle/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/edit/[id]/temporary.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/edit/[id]/temporary.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/vehicles/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/vehicles/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/InputsBlock/InfoInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/InfoInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/InputsBlock/InputsBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/InputsBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/InputsBlock/SelectInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/SelectInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/MainImagesBlock/MainImagesBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/MainImagesBlock/MainImagesBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/UploadImagesBlock/ImageBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/UploadImagesBlock/ImageBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modules/ToolBar/components/VehicleDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/ToolBar/components/VehicleDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/cars.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/cars.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/validation.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/Home/CarCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/CarCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/Home/StatusTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/StatusTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/SignIn/SignInForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/SignIn/SignInForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/Users/UsersTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Users/UsersTabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/providers/CarsContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/providers/CarsContext.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +117,14 @@
       <workItem from="1747990310173" duration="11195000" />
       <workItem from="1748140791751" duration="306000" />
       <workItem from="1748192806609" duration="831000" />
-      <workItem from="1748193705411" duration="15544000" />
+      <workItem from="1748193705411" duration="16140000" />
+      <workItem from="1748248888920" duration="42000" />
+      <workItem from="1748267416345" duration="669000" />
+      <workItem from="1748326769479" duration="1221000" />
+      <workItem from="1748334926231" duration="2071000" />
+      <workItem from="1748353497871" duration="2109000" />
+      <workItem from="1748361728021" duration="1297000" />
+      <workItem from="1748406771025" duration="3240000" />
     </task>
     <servers />
   </component>

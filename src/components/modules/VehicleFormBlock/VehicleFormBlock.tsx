@@ -86,14 +86,16 @@ export default function VehicleFormBlock({
         data.images = data.images.filter(item => Boolean(item));
 
         const formData = new FormData();
-        // formData.append("images", data.images);
-        formData.append("dekraReport", data.dekraReport);
-        formData.append("conditionReport", data.conditionReport);
-        formData.append("conditionReport", data.mainImage);
+
         const textData = {...data};
-        // @ts-expect-error
+
+        formData.append("dekraReport", textData.dekraReport);
+        formData.append("conditionReport", textData.conditionReport);
+        formData.append("mainImage", textData.mainImage);
+        //@ts-expect-error
         textData.images.forEach(image => formData.append('images', image));
 
+        delete textData.mainImage;
         delete textData.images;
         delete textData.dekraReport;
         delete textData.conditionReport;
@@ -102,16 +104,17 @@ export default function VehicleFormBlock({
             // @ts-expect-error
             if(value) formData.append(key, value);
         }
-        console.log(formData);
+
         try {
             if(isAdd) {
-                await addCar(formData);
+                const newCar = await addCar(formData);
+                console.log(newCar);
             }
             else {
                 // @ts-expect-error
                 await updateCarById(id, formData);
             }
-            onOpen();
+            // onOpen();
             // reset();
         }
         catch(error) {
