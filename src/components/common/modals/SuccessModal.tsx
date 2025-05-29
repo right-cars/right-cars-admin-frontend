@@ -12,12 +12,14 @@ interface ModalProps {
   isOpen: boolean;
   onOpenChange: () => void;
   title: string;
+  id: string | undefined;
 }
 
 export default function SuccessModal({
   isOpen,
   onOpenChange,
   title,
+    id,
 }: ModalProps) {
     const pathname = usePathname();
 
@@ -45,7 +47,7 @@ export default function SuccessModal({
             <ModalFooter className="flex flex-col w-full pb-[60px]">
               <Button
                 as={Link}
-                href="/"
+                href={`https://right-cars.co.za/showroom/${id}`}
                 radius="full"
                 color="primary"
                 onPress={onClose}

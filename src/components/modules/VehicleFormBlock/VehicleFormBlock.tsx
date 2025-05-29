@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import {useForm} from "react-hook-form";
 import {useDisclosure} from "@nextui-org/react";
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -17,6 +17,7 @@ import SaveOrCancel from "@/components/common/Buttons/SaveOrCancel";
 import schema from "./validation";
 
 import {addCar, updateCarById} from "@/api/cars";
+import {Spinner} from "@nextui-org/spinner";
 
 // import VinCode from "./VinCode";
 
@@ -28,6 +29,9 @@ export default function VehicleFormBlock({
   initialImages,
    initialVideoUrl
 }: VehicleFormBlockProps) {
+    const [loading, setLoading] = useState(false);
+    const [loadingError, setLoadingError] = useState(null);
+    const carId = useRef(id);
     const { isOpen, onOpen } = useDisclosure();
     const defaultValues = initialData.map(({inputs}) => inputs).flat().reduce((acum, {name, value}) => ({...acum, [name]: value}) , {});
 
@@ -106,19 +110,26 @@ export default function VehicleFormBlock({
         }
 
         try {
+            setLoading(true);
             if(isAdd) {
                 const newCar = await addCar(formData);
+                carId.current = newCar._id;
                 console.log(newCar);
             }
             else {
                 // @ts-expect-error
                 await updateCarById(id, formData);
             }
-            // onOpen();
+            onOpen();
             // reset();
         }
         catch(error) {
             console.log(error);
+            // @ts-expect-error
+            setLoadingError(error?.response?.data?.message || error?.message);
+        }
+        finally {
+            setLoading(false);
         }
     }
 
@@ -160,7 +171,11 @@ export default function VehicleFormBlock({
                 initialImages={initialImages}/>
             <VideoBlock onSaveVideoUrl={handleVideoUrlChange} initialVideoUrl={initialVideoUrl}/>
         </div>
-        <SaveOrCancel title={title} variant="publish" isOpen={isOpen} onSave={onSubmit} />
+        <SaveOrCancel title={title} variant="publish" id={carId.current} isOpen={isOpen} onSave={onSubmit} />
+        {loading && <div className="text-right mt-4">
+            <Spinner size="md" label="Upload car..." labelColor="primary" />
+        </div>}
+        {loadingError && <p className="text-red-500 text-md text-right mt-4">{loadingError}</p>}
     </form>
   );
 }
