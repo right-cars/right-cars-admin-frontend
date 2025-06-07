@@ -34,7 +34,7 @@ export default async function UserEdit({params}) {
   return (
           <Container>
               <Toolbar type="users" title={data.fullName} variant="edit" />
-              <UserInfoBlock personalData={personalDetailsData} addressData={addressData} email={data.email} />
+              <UserInfoBlock id={id} personalData={personalDetailsData} addressData={addressData} email={data.email} />
               {/*<DocumentBlock />*/}
               {/*<FinApp />*/}
               {/*{role === "superadmin" ? <Security/> : <div />}*/}

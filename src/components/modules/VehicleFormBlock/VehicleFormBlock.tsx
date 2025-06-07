@@ -114,7 +114,6 @@ export default function VehicleFormBlock({
             if(isAdd) {
                 const newCar = await addCar(formData);
                 carId.current = newCar._id;
-                console.log(newCar);
             }
             else {
                 // @ts-expect-error

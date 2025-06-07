@@ -1,24 +1,24 @@
 import axios from "axios";
 
-const carsInstance = axios.create({
+const usersInstance = axios.create({
     // baseURL: "https://right-cars-backend-production.up.railway.app/api/cars",
     baseURL: `${process.env.NEXT_PUBLIC_API_URL}/users`,
 })
 
 export const getAllUsers = async () => {
-    const {data} = await carsInstance.get("/");
+    const {data} = await usersInstance.get("/");
     return data;
 }
 
 export const getUserById = async (id: string) => {
-    const {data} = await carsInstance.get(`/${id}`);
+    const {data} = await usersInstance.get(`/${id}`);
     return data;
 }
-// // @ts-expect-error
-// export const updateCarById = async (id: string, payload) => {
-//     const {data} = await carsInstance.put(`/${id}`, payload);
-//     return data;
-// }
+// @ts-expect-error
+export const updateUserById = async (id: string, payload) => {
+    const {data} = await usersInstance.put(`/${id}`, payload);
+    return data;
+}
 //
 // // @ts-expect-error
 // export const updateCarStatusId = async (id: string, payload) => {

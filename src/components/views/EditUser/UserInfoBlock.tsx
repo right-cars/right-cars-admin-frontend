@@ -7,12 +7,21 @@ import SaveOrCancel from "@/components/common/Buttons/SaveOrCancel";
 import InfoInput from "@/components/common/InputsBlock/InfoInput";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
-import schema from "@/components/modules/VehicleFormBlock/validation";
+// import schema from "@/components/modules/VehicleFormBlock/validation";
+import {useState} from "react";
+import {Spinner} from "@nextui-org/spinner";
+
+import {updateUserById} from "@/api/users";
 
 //@ts-expect-error
-export default function UserInfoBlock({personalData, addressData, email}) {
+export default function UserInfoBlock({id, personalData, addressData, email}) {
   // const [formData, setFormData] = useState(data);
-  const {
+    const [loading, setLoading] = useState(false);
+    const [loadingError, setLoadingError] = useState("");
+
+    const defaultValues = [...personalData, ...addressData].reduce((acum, {name, value}) => ({...acum, [name]: value}) , {});
+
+    const {
     handleSubmit,
     control,
     // setValue,
@@ -20,9 +29,10 @@ export default function UserInfoBlock({personalData, addressData, email}) {
     register,
     // watch,
     formState: { errors } } = useForm({
-    defaultValues: {...personalData, ...addressData},
-    resolver: yupResolver(schema),
+    defaultValues,
+    // resolver: yupResolver(schema),
   });
+
   //
   // const handleInputChange = (id: string, newValue: string) => {
   //   const updatedForm = formData.map((input) =>
@@ -44,7 +54,19 @@ export default function UserInfoBlock({personalData, addressData, email}) {
 
   //@ts-expect-error
   const saveUser = async values => {
-    console.log(values);
+    try {
+        setLoading(true);
+        setLoadingError("");
+        await updateUserById(id, values);
+    }
+    catch(error) {
+        console.log(error);
+        // @ts-expect-error
+        setLoadingError(error?.response?.data?.message || error?.message);
+    }
+    finally {
+        setLoading(false);
+    }
   }
 
   const onSubmit = handleSubmit(saveUser);
@@ -64,7 +86,7 @@ export default function UserInfoBlock({personalData, addressData, email}) {
                     key={input.id}
                     readOnly={input.readonly || false}
                     label={input.label}
-                    value={input.value}
+                    // value={input.value}
                     name={input.name}
                     // @ts-expect-error
                     register={register}
@@ -86,7 +108,7 @@ export default function UserInfoBlock({personalData, addressData, email}) {
                     key={input.id}
                     readOnly={input.readonly || false}
                     label={input.label}
-                    value={input.value}
+                    // value={input.value}
                     name={input.name}
                     // @ts-expect-error
                     register={register}
@@ -101,6 +123,10 @@ export default function UserInfoBlock({personalData, addressData, email}) {
           {/*@ts-expect-error*/}
           <SaveOrCancel title={email} variant="save" onSave={onSubmit} />
         </div>
+          {loading && <div className="text-right mt-[-30px]">
+              <Spinner size="md" label="Upload car..." labelColor="primary" />
+          </div>}
+          {loadingError && <p className="text-red-500 text-md text-right mt-4">{loadingError}</p>}
       </form>
   );
 }
