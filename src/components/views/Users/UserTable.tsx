@@ -14,12 +14,13 @@ import {
 import Link from "next/link";
 
 interface User {
-  id: number;
-  name: string;
+  _id: number;
+  type: string;
+  fullName: string;
   addingDate: string;
   status: string;
-  mail: string;
-  phone: string;
+  email: string;
+  mobileNumber: string;
   deposit: string;
   regular: boolean;
   dealer: boolean;
@@ -35,18 +36,19 @@ const getStatusColor = (status: string): string => {
   switch (normalizedStatus) {
     case "verified":
       return "text-green-600";
-    case "in progress":
+    case "inProgress":
       return "text-blue";
-    case "no documents":
+    case "unverified":
       return "text-orange-500";
     default:
       return "text-blue-500";
   }
 };
 
+const rowsPerPage = 9;
+
 export default function UsersTable({ data }: Users) {
   const [page, setPage] = useState(1);
-  const rowsPerPage = 9;
 
   const pages = Math.ceil(data.length / rowsPerPage);
 
@@ -80,17 +82,17 @@ export default function UsersTable({ data }: Users) {
       }
     >
       <TableHeader className="table-head">
-        <TableColumn key="name">Name</TableColumn>
+        <TableColumn key="fullName">Name</TableColumn>
         <TableColumn key="addingDate">Date of adding</TableColumn>
         <TableColumn key="status">Status</TableColumn>
-        <TableColumn key="mail">Email</TableColumn>
-        <TableColumn key="phone">Phone number</TableColumn>
+        <TableColumn key="email">Email</TableColumn>
+        <TableColumn key="mobileNumber">Phone number</TableColumn>
         <TableColumn key="deposit">Deposit</TableColumn>
         <TableColumn key="details"> </TableColumn>
       </TableHeader>
       <TableBody items={items ?? []}>
         {(item) => (
-          <TableRow key={item?.id}>
+          <TableRow key={item?._id}>
             {(columnKey) => {
               if (columnKey === "status") {
                 return (
@@ -106,7 +108,7 @@ export default function UsersTable({ data }: Users) {
                   <TableCell>
                     <Button
                       as={Link}
-                      href={`/users/${item.id}`}
+                      href={`/users/${item._id}`}
                       radius="full"
                       color="primary"
                       variant="flat"

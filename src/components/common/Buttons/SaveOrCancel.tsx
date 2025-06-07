@@ -11,7 +11,7 @@ interface BtnProps {
   onSave: () => void;
   isOpen: boolean;
   title: string;
-  id: string | undefined;
+  id?: string | undefined;
 }
 
 export default function SaveOrCancel({ title, id, variant, onSave, isOpen }: BtnProps) {

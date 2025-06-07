@@ -1,9 +1,12 @@
 "use client";
-import { useState } from "react";
+// import { useState } from "react";
 import { Tab, Tabs } from "@nextui-org/react";
-// import UsersTable from "./UserTable";
+import UsersTable from "./UserTable";
 import NotFoundData from "@/components/common/NotFoundData/NotFoundData";
 // import { temporaryData } from "./temporaryData";
+
+import {useUsers} from "@/providers/UsersContext";
+import {Spinner} from "@nextui-org/spinner";
 
 const tabs = [
   { name: "ALL", key: "all" },
@@ -13,28 +16,16 @@ const tabs = [
 ];
 
 export default function UsersTabs() {
-  const [selectedKey, setSelectedKey] = useState<string | number>("all");
-
-  // const filteredUsers = temporaryData.filter((user) => {
-  //   switch (selectedKey) {
-  //     case "all":
-  //       return true;
-  //     case "regular":
-  //       return user.regular;
-  //     case "dealer":
-  //       return user.dealer;
-  //     case "archive":
-  //       return user.archive;
-  //     default:
-  //       return true;
-  //   }
-  // });
+  //@ts-expect-error
+  const {users, current, loading, setLoading, type, setType} = useUsers();
+  // console.log(users)
 
   return (
     <Tabs
-      selectedKey={selectedKey}
+      selectedKey={type}
       onSelectionChange={(key) => {
-        setSelectedKey(key);
+        setLoading(true);
+          setType(key);
       }}
       aria-label="Status Tabs"
       className="w-full"
@@ -55,8 +46,9 @@ export default function UsersTabs() {
           className="uppercase"
           style={{ fontWeight: "bold" }}
         >
-          <NotFoundData>Not found users</NotFoundData>
-          {/*<UsersTable data={filteredUsers} />*/}
+          {(current === "success" && !Boolean(users?.length)) && <NotFoundData>Not found users</NotFoundData>}
+          {loading && <div style={{textAlign: "center"}} className="mt-[10px]"><Spinner size="lg" label="Loading..." labelColor="primary" /></div>}
+          {(current === "success" && Boolean(users?.length)) && <UsersTable data={users} />}
         </Tab>
       ))}
     </Tabs>

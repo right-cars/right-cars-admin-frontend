@@ -1,24 +1,43 @@
-"use client"
-
-import {getCookie} from "cookies-next/client";
+// import {getCookie} from "cookies-next/client";
 
 import Container from "@/components/common/Container";
 import Toolbar from "@/components/modules/ToolBar/Toolbar";
-import DocumentBlock from "@/components/views/EditUser/Documents";
-import FinApp from "@/components/views/EditUser/FinApp";
-import Security from "@/components/views/EditUser/Security";
+// import DocumentBlock from "@/components/views/EditUser/Documents";
+// import FinApp from "@/components/views/EditUser/FinApp";
+// import Security from "@/components/views/EditUser/Security";
 import UserInfoBlock from "@/components/views/EditUser/UserInfoBlock";
 
-export default function UserEdit() {
-    const role = getCookie("role");
+import {personalDetailsData, addressData} from "@/data/initialUsersData";
+
+import {getUserById} from "@/api/users";
+
+// @ts-expect-error
+export default async function UserEdit({params}) {
+    // const role = getCookie("role");
+
+    const {id} = params;
+
+    const data = await getUserById(id);
+
+    personalDetailsData.forEach(item => {
+        if(data[item.name]) {
+            item.value = data[item.name];
+        }
+    })
+
+    addressData.forEach(item => {
+        if(data[item.name]) {
+            item.value = data[item.name];
+        }
+    })
 
   return (
           <Container>
-              <Toolbar type="users" title="Humeniuk Alina" variant="edit" />
-              <UserInfoBlock />
-              <DocumentBlock />
-              <FinApp />
-              {role === "superadmin" ? <Security/> : <div />}
+              <Toolbar type="users" title={data.fullName} variant="edit" />
+              <UserInfoBlock personalData={personalDetailsData} addressData={addressData} email={data.email} />
+              {/*<DocumentBlock />*/}
+              {/*<FinApp />*/}
+              {/*{role === "superadmin" ? <Security/> : <div />}*/}
           </Container>
   );
 }
