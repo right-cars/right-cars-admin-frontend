@@ -11,12 +11,12 @@ export const getAllUsers = async () => {
 }
 
 export const getUserById = async (id: string) => {
-    const {data} = await usersInstance.get(`/${id}`);
+    const {data} = await usersInstance.get(`/admin/${id}`);
     return data;
 }
 // @ts-expect-error
 export const updateUserById = async (id: string, payload) => {
-    const {data} = await usersInstance.put(`/${id}`, payload);
+    const {data} = await usersInstance.put(`/admin/${id}`, payload);
     return data;
 }
 //

@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/users.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/users/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/users/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/VehicleFormBlock/VehicleFormBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/EditUser/UserInfoBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/EditUser/UserInfoBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/initialUsersData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/initialUsersData.js" afterDir="false" />
-    </list>
+    <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -134,7 +127,7 @@
       <workItem from="1748494734604" duration="623000" />
       <workItem from="1748539332205" duration="603000" />
       <workItem from="1749312915032" duration="11915000" />
-      <workItem from="1749328293845" duration="2641000" />
+      <workItem from="1749328293845" duration="2840000" />
     </task>
     <servers />
   </component>
