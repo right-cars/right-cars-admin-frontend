@@ -2,7 +2,7 @@
 
 import Container from "@/components/common/Container";
 import Toolbar from "@/components/modules/ToolBar/Toolbar";
-// import DocumentBlock from "@/components/views/EditUser/Documents";
+import DocumentBlock from "@/components/views/EditUser/Documents";
 // import FinApp from "@/components/views/EditUser/FinApp";
 // import Security from "@/components/views/EditUser/Security";
 import UserInfoBlock from "@/components/views/EditUser/UserInfoBlock";
@@ -29,13 +29,19 @@ export default async function UserEdit({params}) {
         if(data[item.name]) {
             item.value = data[item.name];
         }
-    })
+    });
+
+    const documents = [
+        { id: 1, label: "identity document", name: "idOrDriverLicence", url: data.idOrDriverLicence },
+        { id: 2, label: "proof of address", name: "proofOfPhysicalAddress", url: data.proofOfPhysicalAddress },
+    ];
 
   return (
           <Container>
               <Toolbar type="users" title={data.fullName} variant="edit" />
               <UserInfoBlock id={id} personalData={personalDetailsData} addressData={addressData} email={data.email} />
-              {/*<DocumentBlock />*/}
+              <DocumentBlock documents={documents} />
+              {/*<Security/>*/}
               {/*<FinApp />*/}
               {/*{role === "superadmin" ? <Security/> : <div />}*/}
           </Container>
