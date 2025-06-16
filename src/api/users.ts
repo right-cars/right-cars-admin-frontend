@@ -19,6 +19,16 @@ export const updateUserById = async (id: string, payload) => {
     const {data} = await usersInstance.put(`/admin/${id}`, payload);
     return data;
 }
+
+export const deleteDocumentById = async (id: string, name: string) => {
+    const {data} = await usersInstance.delete(`/documents/${id}`, {
+        params: {
+            name,
+        }
+    });
+    return data;
+}
+
 //
 // // @ts-expect-error
 // export const updateCarStatusId = async (id: string, payload) => {

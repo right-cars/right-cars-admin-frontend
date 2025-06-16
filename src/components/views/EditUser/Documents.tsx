@@ -6,21 +6,33 @@ import Image from "next/image";
 
 import DocumentModal from "@/components/common/modals/DocumentModal";
 
+import {deleteDocumentById} from "@/api/users";
+
 // const documents = [
 //   { id: 1, name: "identity document", url: "#" },
 //   { id: 2, name: "proof of address", url: "#" },
 // ];
 //@ts-expect-error
-export default function DocumentBlock({documents}) {
+export default function DocumentBlock({id, documents}) {
     const {isOpen, onOpenChange} = useDisclosure();
     const documentRef = useRef("");
+
+    const deleteDocument = async (name: string)=> {
+        try {
+            await deleteDocumentById(id, name);
+            console.log(`delete document ${name}`)
+        }
+        catch(error) {
+            console.log(error);
+        }
+    }
 
   return (
       <div className="mb-20">
           <h2 className="text-md font-bold mb-14 text-black uppercase">
               Documents
           </h2>
-          <div className="py-4 px-[8px] bg-pureWhite rounded-[24px] shadow-custom">
+          <div className="py-4 px-[8px] mb-[12px] bg-pureWhite rounded-[24px] shadow-custom">
               <div className="flex items-center gap-8">
                   <div
                       key={documents[0].id}
@@ -53,10 +65,10 @@ export default function DocumentBlock({documents}) {
                           <Button radius="full" variant="flat" color="primary">
                               VERIFY
                           </Button>
-                          <Button radius="full" variant="flat" color="primary">
+                          <Button onPress={()=> deleteDocument("idOrDriverLicence")} radius="full" variant="flat" color="primary">
                               DELETE
                           </Button>
-                          <Button radius="full" variant="flat" color="primary">
+                          <Button onPress={()=> deleteDocument("idOrDriverLicence")} radius="full" variant="flat" color="primary">
                               NEW REQUEST
                           </Button>
                       </div>
@@ -97,10 +109,10 @@ export default function DocumentBlock({documents}) {
                           <Button radius="full" variant="flat" color="primary">
                               VERIFY
                           </Button>
-                          <Button radius="full" variant="flat" color="primary">
+                          <Button onPress={()=> deleteDocument("proofOfPhysicalAddress")} radius="full" variant="flat" color="primary">
                               DELETE
                           </Button>
-                          <Button radius="full" variant="flat" color="primary">
+                          <Button onPress={()=> deleteDocument("proofOfPhysicalAddress")} radius="full" variant="flat" color="primary">
                               NEW REQUEST
                           </Button>
                       </div>
