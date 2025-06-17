@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/common/modals/DeleteDocumentModal.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/modals/VerifyDocumentModal.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/users.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/users/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/users/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/EditUser/Documents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/EditUser/Documents.tsx" afterDir="false" />
-    </list>
+    <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -141,7 +134,7 @@
       <workItem from="1749919593816" duration="455000" />
       <workItem from="1750055611758" duration="1396000" />
       <workItem from="1750072099118" duration="3243000" />
-      <workItem from="1750161684874" duration="6757000" />
+      <workItem from="1750161684874" duration="7144000" />
     </task>
     <servers />
   </component>
