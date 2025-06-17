@@ -31,16 +31,19 @@ export default async function UserEdit({params}) {
         }
     });
 
-    const documents = [
-        { id: 1, label: "identity document", name: "idOrDriverLicence", url: data.idOrDriverLicence },
-        { id: 2, label: "proof of address", name: "proofOfPhysicalAddress", url: data.proofOfPhysicalAddress },
-    ];
+    const documents = [];
+    if(data.idOrDriverLicence) {
+        documents.push({label: "identity document", name: "idOrDriverLicence", url: data.idOrDriverLicence});
+    }
+    if(data.proofOfPhysicalAddress) {
+        documents.push({ label: "proof of address", name: "proofOfPhysicalAddress", url: data.proofOfPhysicalAddress });
+    }
 
   return (
           <Container>
               <Toolbar type="users" title={data.fullName} variant="edit" />
               <UserInfoBlock id={id} personalData={personalDetailsData} addressData={addressData} email={data.email} />
-              <DocumentBlock id={id} documents={documents} />
+              {Boolean(documents.length) && <DocumentBlock id={id} user={`${data.fullName} ${data.surname}`} documents={documents} />}
               {/*<Security/>*/}
               {/*<FinApp />*/}
               {/*{role === "superadmin" ? <Security/> : <div />}*/}

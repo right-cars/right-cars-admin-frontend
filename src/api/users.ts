@@ -29,6 +29,11 @@ export const deleteDocumentById = async (id: string, name: string) => {
     return data;
 }
 
+export const verifyDocumentById = async (id: string, name: string) => {
+    const {data} = await usersInstance.put(`/documents/${id}?name=${name}`);
+    return data;
+}
+
 //
 // // @ts-expect-error
 // export const updateCarStatusId = async (id: string, payload) => {
