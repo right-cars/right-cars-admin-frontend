@@ -26,14 +26,15 @@ export default function DocumentModal({ isOpen, onOpenChange, src }: ModalProps)
         closeButton: "hidden",
       }}
     >
-      <ModalContent>
+      <ModalContent style={{minWidth: "70vw"}}>
         {() => (
           <>
-            <ModalBody>
-              <div className="flex flex-col items-center p-4 rounded border border-lightGray shadow-custom bg-pureWhite">
-                <p className="text-[#F31260] font-metrophobic text-center">
-                  <Image width={800} src={src} alt="document img" />
-                </p>
+            <ModalBody className="w-full">
+              <div className="flex w-full flex-col items-center p-4 rounded border border-lightGray shadow-custom bg-pureWhite">
+                  {src.split(".").pop() === "pdf" ? <iframe className="w-full h-[80vh]" src={src}></iframe> :  <Image width={600} src={src} alt="document img" />}
+                  {/*<iframe className="w-full h-[80vh]" src={src} ></iframe>*/}
+
+
               </div>
             </ModalBody>
           </>
