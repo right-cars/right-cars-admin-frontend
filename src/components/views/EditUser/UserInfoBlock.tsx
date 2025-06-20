@@ -124,7 +124,7 @@ export default function UserInfoBlock({id, personalData, addressData, email}) {
           <SaveOrCancel title={email} variant="save" onSave={onSubmit} />
         </div>
           {loading && <div className="text-right mt-[-30px]">
-              <Spinner size="md" label="Upload car..." labelColor="primary" />
+              <Spinner size="md" label="Save user info..." labelColor="primary" />
           </div>}
           {loadingError && <p className="text-red-500 text-md text-right mt-4">{loadingError}</p>}
       </form>
