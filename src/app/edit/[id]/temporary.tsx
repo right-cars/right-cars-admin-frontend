@@ -53,6 +53,9 @@ export const temporary = [
           { id: nanoid(), value: "Daihatsu", text: "Daihatsu" },
           { id: nanoid(), value: "Ford", text: "Ford" },
           { id: nanoid(), value: "JMC", text: "JMC" },
+          { id: nanoid(), value: "Chery", text: "Chery" },
+              { id: nanoid(), value: "Haval", text: "Haval" },
+              { id: nanoid(), value: "Isuzu", text: "Isuzu" },
         ] },
       { id: nanoid(), label: "km", name:"mileageInKm", value: "", mask: true },
       { id: nanoid(), label: "model", name: "model", value: "" },
@@ -71,6 +74,7 @@ export const temporary = [
               { id: nanoid(), value: "FWD", text: "FWD" },
               { id: nanoid(), value: "RWD", text: "RWD" },
               { id: nanoid(), value: "AWD", text: "AWD" },
+              { id: nanoid(), value: "4X4", text: "4X4" },
           ] },
       { id: nanoid(), label: "finance", name: "finance", value: "" },
       { id: nanoid(), label: "Select car type", name: "type", value: "car", options: [
