@@ -47,6 +47,7 @@ export const initialData = [
               { id: nanoid(), value: "Isuzu", text: "Isuzu" },
               { id: nanoid(), value: "Geely", text: "Geely" },
               { id: nanoid(), value: "Chana", text: "Chana" },
+              { id: nanoid(), value: "Smart", text: "Smart" },
           ] },
       { id: nanoid(), label: "km", name:"km", value: "", mask: true },
       { id: nanoid(), label: "model", name: "model", value: "" },
