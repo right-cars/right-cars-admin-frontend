@@ -59,6 +59,7 @@ const initialCarData = [
                     { id: nanoid(), value: "Geely", text: "Geely" },
                     { id: nanoid(), value: "Chana", text: "Chana" },
                     { id: nanoid(), value: "Smart", text: "Smart" },
+                    { id: nanoid(), value: "Seat", text: "Seat" },
                 ] },
             { id: nanoid(), label: "km", name:"mileageInKm", value: "", mask: true },
             { id: nanoid(), label: "model", name: "model", value: "" },
