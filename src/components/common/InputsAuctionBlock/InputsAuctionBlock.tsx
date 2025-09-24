@@ -2,6 +2,7 @@ import FileUploadInput from "./FileUploadInput";
 import InfoInput from "./InfoInput";
 import SelectInput from "./SelectInput";
 import ToggleInput from "@/components/common/InputsBlock/ToggleInput";
+import AuctionCarCard from "@/components/views/Auction/AuctionCarCard";
 import {Control} from "react-hook-form";
 
 interface InputData {
@@ -73,9 +74,11 @@ const getInput = ({register, input, control, errors}) => {
   )
 }
 
-export default function InputsBlock({
+export default function InputsAuctionBlock({
   title,
   inputs,
+    //@ts-expect-error
+    car,
     errors,
   // onInputChange,
   // onFileChange,
@@ -88,9 +91,15 @@ export default function InputsBlock({
     <div>
       {title && <h2 className="text-md font-bold mb-14 text-black uppercase">{title}</h2>}
       <div className="p-8 bg-pureWhite rounded-[24px] shadow-custom ">
-        <div className="grid grid-cols-2 gap-4">
-          {inputs.map((input) => getInput({register, input, control, errors}))}
+        <div className="grid grid-cols-4 gap-4">
+          <div className="col-span-3 grid grid-cols-2 gap-4">
+            {inputs.map((input) => getInput({register, input, control, errors}))}
+          </div>
+          <div className="col-span-1">
+            <AuctionCarCard year={car.year} img={car.images[0]} make={car.make} model={car.model} price={car.price} />
+          </div>
         </div>
+
       </div>
     </div>
   );

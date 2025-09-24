@@ -3,11 +3,11 @@
 // import { useState } from "react";
 // import initialUsersData from "../../../data/initialUsersData";
 import SaveOrCancel from "@/components/common/Buttons/SaveOrCancel";
-// import FileUploadInput from "@/components/common/InputsBlock/FileUploadInput";
+// import FileUploadInput from "@/components/common/InputsAuctionBlock/FileUploadInput";
 import InfoInput from "@/components/common/InputsBlock/InfoInput";
 import {useForm} from "react-hook-form";
 import {yupResolver} from "@hookform/resolvers/yup";
-// import schema from "@/components/modules/VehicleFormBlock/validation";
+// import schema from "@/components/modules/CreactAuctionForm/validation";
 import {useState} from "react";
 import {Spinner} from "@nextui-org/spinner";
 

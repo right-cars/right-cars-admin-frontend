@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import {
   Dropdown,
   DropdownItem,
@@ -17,6 +18,7 @@ const getItems = (status, onUpdateStatus)=> {
     if(status === "active")
         return (
             <>
+                <DropdownItem key="reserved" onPress={()=> onUpdateStatus("auction")}>Add car to auction</DropdownItem>
                 <DropdownItem key="reserved" onPress={()=> onUpdateStatus("deposit")}>Mark as reserved</DropdownItem>
                 <DropdownItem key="archive" onPress={()=> onUpdateStatus("archive")}>Archive</DropdownItem>
             </>
@@ -24,12 +26,14 @@ const getItems = (status, onUpdateStatus)=> {
     if(status === "deposit")
         return (
             <>
+                <DropdownItem key="reserved" onPress={()=> onUpdateStatus("auction")}>Add car to auction</DropdownItem>
                 <DropdownItem key="active" onPress={()=> onUpdateStatus("active")}>Remove from reserve</DropdownItem>
                 <DropdownItem key="archive" onPress={()=> onUpdateStatus("archive")}>Archive</DropdownItem>
             </>
         );
     return (
         <>
+            <DropdownItem key="reserved" onPress={()=> onUpdateStatus("auction")}>Add car to auction</DropdownItem>
             <DropdownItem key="reserved" onPress={()=> onUpdateStatus("deposit")}>Mark as reserved</DropdownItem>
             <DropdownItem key="active" onPress={()=> onUpdateStatus("active")}>Active</DropdownItem>
         </>
@@ -39,7 +43,9 @@ const getItems = (status, onUpdateStatus)=> {
 //@ts-expect-error
 export default function ActionsDropdown({status, id}) {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  // @ts-expect-error
+    const router = useRouter();
+
+    // @ts-expect-error
   const {deleteCar, updateCarStatus} = useCars();
 
   const onDelete = ()=> {
@@ -48,7 +54,13 @@ export default function ActionsDropdown({status, id}) {
   }
 
   const onUpdateStatus = (status: string)=> {
-    updateCarStatus(id, status);
+      if(status === "auction") {
+          router.push(`/create-auction?id=${id}`);
+      }
+      else {
+          updateCarStatus(id, status);
+      }
+
   }
 
     // @ts-ignore
