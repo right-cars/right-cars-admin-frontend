@@ -82,7 +82,7 @@ export default function CreactAuctionForm({
             const payload = {...data, startPrice: Number(data.startPrice), car: car._id};
             await addAuction(payload);
             const updateCar = await updateCarStatusId(car._id, {isOnAuction: true});
-            router.push('/vehicles');
+            router.push('/auction');
             // onOpen();
             reset();
         }
