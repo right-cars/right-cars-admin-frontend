@@ -5,7 +5,7 @@ import Container from "@/components/common/Container";
 export default async function Action() {
   return (
       <Container>
-          <p>auction</p>
+          <p>auction display error, please check image size</p>
           {/*<Toolbar title="vehicles" />*/}
           {/*<StatusTabs/>*/}
       </Container>
