@@ -5,6 +5,11 @@ const auctionsInstance = axios.create({
     baseURL: `${process.env.NEXT_PUBLIC_API_URL}/auctions`,
 })
 
+export const getAuctions = async () => {
+    const {data} = await auctionsInstance.get("/cars");
+    return data;
+}
+
 // @ts-expect-error
 export const addAuction = async payload => {
     const {data} = await auctionsInstance.post("/", payload);
