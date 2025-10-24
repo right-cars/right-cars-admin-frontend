@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/app/create-auction/initialData.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/create-auction/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/FileUploadInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/InfoInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/InputsAuctionBlock.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/SelectInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/ToggleInput.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/modules/CreactAuctionForm/CreactAuctionForm.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/modules/CreactAuctionForm/VinCode.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/modules/CreactAuctionForm/validation.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/views/Auction/AuctionCarCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/initialAuctionData.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/auctions.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/common/InputsBlock/InputsBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsBlock/InputsBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/EditUser/UserInfoBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/EditUser/UserInfoBlock.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/Home/ActionsDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/ActionsDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auction/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auction/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/vehicles/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/vehicles/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/InfoInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/InfoInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/CreactAuctionForm/CreactAuctionForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/CreactAuctionForm/CreactAuctionForm.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +46,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Projects/right-cars/right-cars-admin-frontend/src/components/views/Auction",
+    "last_opened_file_path": "C:/Projects/right-cars/right-cars-admin-frontend/src/api",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -68,11 +58,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\api" />
       <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\views\Auction" />
       <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\common" />
       <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\data" />
       <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components" />
-      <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\app" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\modules" />
@@ -163,7 +153,10 @@
       <workItem from="1755710858111" duration="52000" />
       <workItem from="1756237636590" duration="804000" />
       <workItem from="1756238618779" duration="62000" />
-      <workItem from="1758712003965" duration="6757000" />
+      <workItem from="1758712003965" duration="7773000" />
+      <workItem from="1760272795885" duration="1983000" />
+      <workItem from="1760782087934" duration="1152000" />
+      <workItem from="1761302870292" duration="4366000" />
     </task>
     <servers />
   </component>

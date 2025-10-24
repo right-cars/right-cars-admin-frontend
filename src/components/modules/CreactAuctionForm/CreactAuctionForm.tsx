@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import {useForm} from "react-hook-form";
 import {useDisclosure} from "@nextui-org/react";
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useRouter } from 'next/navigation';
 import { usePathname } from "next/navigation";
 
 import { VehicleFormBlockProps, BlockData } from "@/types/types";
@@ -18,6 +19,8 @@ import SaveOrCancel from "@/components/common/Buttons/SaveOrCancel";
 import schema from "./validation";
 
 // import {addCar, updateCarById} from "@/api/cars";
+import {addAuction} from "@/api/auctions";
+import {updateCarStatusId} from "@/api/cars";
 import {Spinner} from "@nextui-org/spinner";
 
 // import VinCode from "./VinCode";
@@ -28,10 +31,11 @@ export default function CreactAuctionForm({
     car,
     id,
   initialData,
-    initialMainImage,
-  initialImages,
-   initialVideoUrl
+  //   initialMainImage,
+  // initialImages,
+  //  initialVideoUrl
 }: VehicleFormBlockProps) {
+    const router = useRouter();
     const [loading, setLoading] = useState(false);
     const [loadingError, setLoadingError] = useState(null);
     const carId = useRef(id);
@@ -41,25 +45,22 @@ export default function CreactAuctionForm({
     const {
         handleSubmit,
         control,
-        setValue,
-        setError,
+        // setValue,
+        // setError,
+        reset,
         setFocus,
         register,
         // clearErrors,
-        watch,
+        // watch,
         formState: { errors } } = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
             ...defaultValues,
-            // @ts-expect-error
-            mainImage: initialMainImage,
-            images: initialImages,
-            video: initialVideoUrl,
         },
     });
 
   const [blocks] = useState<BlockData[]>(initialData);
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
     useEffect(() => {
         const firstError = Object.keys(errors)[0];
@@ -76,66 +77,23 @@ export default function CreactAuctionForm({
 
    // @ts-expect-error
     const addVehicle = async data => {
-        console.log(data)
-        //@ts-expect-error
-        return setError("image", {message: "Too large image"});
-        // const isAdd = pathname === "/create-vehicle";
-        //
-        // // @ts-expect-error
-        // if(!data.images || !data.images.filter(item => Boolean(item)).length) {
-        //     // @ts-expect-error
-        //     return setError("images", {message: "Need upload images"});
-        // }
-        //
-        // if(!data.mainImage) {
-        //     // @ts-expect-error
-        //     return setError("mainImage", {message: "Need upload main image"});
-        // }
-        //
-        // // @ts-expect-error
-        // data.images = data.images.filter(item => Boolean(item));
-        //
-        // const formData = new FormData();
-        //
-        // const textData = {...data};
-        //
-        // formData.append("dekraReport", textData.dekraReport);
-        // formData.append("conditionReport", textData.conditionReport);
-        // formData.append("mainImage", textData.mainImage);
-        // //@ts-expect-error
-        // textData.images.forEach(image => formData.append('images', image));
-        //
-        // delete textData.mainImage;
-        // delete textData.images;
-        // delete textData.dekraReport;
-        // delete textData.conditionReport;
-        //
-        // for(const [key, value] of Object.entries(textData)) {
-        //     // @ts-expect-error
-        //     if(value) formData.append(key, value);
-        // }
-        //
-        // try {
-        //     setLoading(true);
-        //     if(isAdd) {
-        //         const newCar = await addCar(formData);
-        //         carId.current = newCar._id;
-        //     }
-        //     else {
-        //         // @ts-expect-error
-        //         await updateCarById(id, formData);
-        //     }
-        //     onOpen();
-        //     // reset();
-        // }
-        // catch(error) {
-        //     console.log(error);
-        //     // @ts-expect-error
-        //     setLoadingError(error?.response?.data?.message || error?.message);
-        // }
-        // finally {
-        //     setLoading(false);
-        // }
+        try {
+            setLoading(true);
+            const payload = {...data, startPrice: Number(data.startPrice), car: car._id};
+            await addAuction(payload);
+            const updateCar = await updateCarStatusId(car._id, {isOnAuction: true});
+            router.push('/vehicles');
+            // onOpen();
+            reset();
+        }
+        catch(error) {
+            console.log(error);
+            // @ts-expect-error
+            setLoadingError(error?.response?.data?.message || error?.message);
+        }
+        finally {
+            setLoading(false);
+        }
     }
 
    const onSubmit = handleSubmit(addVehicle);
