@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/modules/ToolBar/AuctionToolbar.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/views/Home/AuctionCarCard.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/views/Home/AuctionStatusTabs.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/auctions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auctions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auction/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auction/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +151,7 @@
       <workItem from="1758712003965" duration="7773000" />
       <workItem from="1760272795885" duration="1983000" />
       <workItem from="1760782087934" duration="1152000" />
-      <workItem from="1761302870292" duration="6624000" />
+      <workItem from="1761302870292" duration="7869000" />
     </task>
     <servers />
   </component>
