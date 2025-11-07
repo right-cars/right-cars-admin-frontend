@@ -25,6 +25,8 @@ import {Spinner} from "@nextui-org/spinner";
 
 // import VinCode from "./VinCode";
 
+
+
 export default function CreactAuctionForm({
   // variant,
     //@ts-expect-error
