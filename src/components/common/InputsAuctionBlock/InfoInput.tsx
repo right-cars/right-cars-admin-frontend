@@ -27,6 +27,12 @@ export default function InfoInput({
             variant="underlined"
             label={label}
             defaultValue={value}
+            inputMode="numeric"           // ← отображает цифровую клавиатуру на мобильных
+            pattern="[0-9]*"              // ← подсказывает браузеру, что нужны цифры
+            onInput={(e) => {
+                //@ts-expect-error
+                e.target.value = e.target.value.replace(/\D/g, "");  // ← удаляем всё, что не цифра
+            }}
             // ref={mask ? inputRef : null}
             // @ts-expect-error
             errorMessage={errors[name] ? errors[name]?.message : ""}

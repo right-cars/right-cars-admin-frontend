@@ -5,8 +5,8 @@ import {useForm} from "react-hook-form";
 import {useDisclosure} from "@nextui-org/react";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useRouter } from 'next/navigation';
-import { usePathname } from "next/navigation";
-
+// import { usePathname } from "next/navigation";
+import { today, getLocalTimeZone, Time } from "@internationalized/date";
 import { VehicleFormBlockProps, BlockData } from "@/types/types";
 
 // import InputsBlock from "@/components/common/InputsBlock/InputsBlock";
@@ -25,8 +25,6 @@ import {Spinner} from "@nextui-org/spinner";
 
 // import VinCode from "./VinCode";
 
-
-
 export default function CreactAuctionForm({
   // variant,
     //@ts-expect-error
@@ -41,8 +39,31 @@ export default function CreactAuctionForm({
     const [loading, setLoading] = useState(false);
     const [loadingError, setLoadingError] = useState(null);
     const carId = useRef(id);
-    const { isOpen, onOpen } = useDisclosure();
+    const { isOpen } = useDisclosure();
     const defaultValues = initialData.map(({inputs}) => inputs).flat().reduce((acum, {name, value}) => ({...acum, [name]: value}) , {});
+
+    // @ts-expect-error
+    if (!defaultValues.startDate || defaultValues.startDate === "") {
+        // @ts-expect-error
+        defaultValues.startDate = today(getLocalTimeZone());
+    }
+// @ts-expect-error
+    if (!defaultValues.endDate || defaultValues.endDate === "") {
+        // @ts-expect-error
+        defaultValues.endDate = today(getLocalTimeZone());
+    }
+
+
+    // @ts-expect-error
+    if (!defaultValues.startTime || defaultValues.startTime === "") {
+        // @ts-expect-error
+        defaultValues.startTime = new Time(10, 0);
+    }
+// @ts-expect-error
+    if (!defaultValues.endTime || defaultValues.endTime === "") {
+        // @ts-expect-error
+        defaultValues.endTime = new Time(10, 0);
+    }
 
     const {
         handleSubmit,
@@ -52,8 +73,11 @@ export default function CreactAuctionForm({
         reset,
         setFocus,
         register,
+        watch,
+        setValue,
         // clearErrors,
         // watch,
+
         formState: { errors } } = useForm({
         resolver: yupResolver(schema),
         defaultValues: {
@@ -63,6 +87,17 @@ export default function CreactAuctionForm({
 
   const [blocks] = useState<BlockData[]>(initialData);
   // const pathname = usePathname();
+
+    const startDate = watch("startDate");
+    const endDate = watch("endDate");
+    useEffect(() => {
+        if (!startDate || !endDate) return;
+        // Если startDate > endDate → ставим endDate = startDate
+        // @ts-expect-error
+        if (startDate.compare(endDate) !== 1) {
+            setValue("endDate", startDate, { shouldValidate: true });
+        }
+    }, [startDate, endDate, setValue]);
 
     useEffect(() => {
         const firstError = Object.keys(errors)[0];

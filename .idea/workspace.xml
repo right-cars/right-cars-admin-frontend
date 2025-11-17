@@ -5,6 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/DatePickerInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/TimePickerInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/InfoInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/InfoInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/InputsAuctionBlock.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/InputsAuctionBlock/InputsAuctionBlock.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/modules/CreactAuctionForm/CreactAuctionForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/CreactAuctionForm/CreactAuctionForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/initialAuctionData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/initialAuctionData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,24 +49,24 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Projects/right-cars/right-cars-admin-frontend/src/components/views/Home",
+    "last_opened_file_path": "C:/Projects/Right-cars/right-cars-admin-frontend/src/components/common/InputsAuctionBlock",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
     "settings.editor.selected.configurable": "preferences.lookFeel",
-    "ts.external.directory.path": "C:\\Projects\\right-cars\\right-cars-admin-frontend\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\Projects\\Right-cars\\right-cars-admin-frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Right-cars\right-cars-admin-frontend\src\components\common\InputsAuctionBlock" />
       <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\views\Home" />
       <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\modules\ToolBar" />
       <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\api" />
       <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\views\Auction" />
-      <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\common" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\modules" />
@@ -158,7 +166,8 @@
       <workItem from="1761776885902" duration="1134000" />
       <workItem from="1761822819219" duration="594000" />
       <workItem from="1762543896131" duration="320000" />
-      <workItem from="1762544243349" duration="16000" />
+      <workItem from="1762544243349" duration="758000" />
+      <workItem from="1763374778548" duration="11143000" />
     </task>
     <servers />
   </component>

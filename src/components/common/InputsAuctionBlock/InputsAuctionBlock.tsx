@@ -1,5 +1,7 @@
 import FileUploadInput from "./FileUploadInput";
 import InfoInput from "./InfoInput";
+import DatePickerInput from "./DatePickerInput";
+import TimeInputInput from "./TimePickerInput";
 import SelectInput from "./SelectInput";
 import ToggleInput from "@/components/common/InputsBlock/ToggleInput";
 import AuctionCarCard from "@/components/views/Auction/AuctionCarCard";
@@ -57,6 +59,41 @@ const getInput = ({register, input, control, errors}) => {
         //   onFileChange(input.id, file);
         // }}
     />)
+
+  if(input.variant === "datepicker") {
+    return (
+        <DatePickerInput
+            key={input.id}
+            label={input.label}
+            control={control}
+            name={input.name}
+            errors={errors}
+            value={input.value}
+            // @ts-expect-error
+            mask={input.mask}
+            register={register}
+            // onChange={(newValue) => onInputChange(title, input.id, newValue)}
+        />
+    )
+  }
+
+  if(input.variant === "timepicker") {
+    return (
+        <TimeInputInput
+            key={input.id}
+            label={input.label}
+            control={control}
+            name={input.name}
+            errors={errors}
+            value={input.value}
+            // @ts-expect-error
+            mask={input.mask}
+            register={register}
+            // onChange={(newValue) => onInputChange(title, input.id, newValue)}
+        />
+    )
+  }
+
 
   return (
       <InfoInput
