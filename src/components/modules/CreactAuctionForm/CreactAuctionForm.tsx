@@ -90,11 +90,13 @@ export default function CreactAuctionForm({
 
     const startDate = watch("startDate");
     const endDate = watch("endDate");
+
     useEffect(() => {
         if (!startDate || !endDate) return;
+        // console.log(startDate.compare(endDate));
         // Если startDate > endDate → ставим endDate = startDate
         // @ts-expect-error
-        if (startDate.compare(endDate) !== 1) {
+        if (startDate.compare(endDate) > 0) {
             setValue("endDate", startDate, { shouldValidate: true });
         }
     }, [startDate, endDate, setValue]);
