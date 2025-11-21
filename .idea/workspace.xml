@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/modules/CreactAuctionForm/CreactAuctionForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/modules/CreactAuctionForm/CreactAuctionForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/auction/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auction/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Home/ActionsDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/ActionsDropdown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Home/AuctionCarCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/AuctionCarCard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/views/Home/AuctionStatusTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/AuctionStatusTabs.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +164,8 @@
       <workItem from="1762543896131" duration="320000" />
       <workItem from="1762544243349" duration="758000" />
       <workItem from="1763374778548" duration="11740000" />
-      <workItem from="1763472832382" duration="1596000" />
+      <workItem from="1763472832382" duration="2431000" />
+      <workItem from="1763553757555" duration="6453000" />
     </task>
     <servers />
   </component>

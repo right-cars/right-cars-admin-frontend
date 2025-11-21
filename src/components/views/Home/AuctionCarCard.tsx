@@ -1,6 +1,6 @@
 // import { Button, Link } from "@nextui-org/react";
 import Image from "next/image";
-// import ActionsDropdown from "./ActionsDropdown";
+import ActionsDropdown from "./ActionsDropdown";
 
 interface CardProps {
   id: string;
@@ -8,20 +8,23 @@ interface CardProps {
   make: string;
   model: string;
   year: number;
-  status: string;
+  // status: string;
+    deleteCar: (id: string) => void;
+    updateCarStatus: (id: string) => void;
   // brand: string;
   price: string;
   endTime: string;
   endDate: string;
 }
+
 export default function AuctionCarCard(props: CardProps) {
-  const { img, year, make, model, price, endTime, endDate } = props;
+  const { updateCarStatus, deleteCar, img, year, make, model, price, endTime, endDate, id } = props;
 
   return (
     <li className="pb-6 bg-pureWhite flex flex-col gap-6 items-center rounded-lg border border-lightGray shadow-custom relative overflow-hidden">
-      {/*<div className="absolute top-[14px] right-[14px]">*/}
-      {/*  <ActionsDropdown status={status} id={id} />*/}
-      {/*</div>*/}
+      <div className="absolute top-[14px] right-[14px]">
+        <ActionsDropdown updateCarStatus={updateCarStatus} deleteCar={deleteCar}  id={id} />
+      </div>
 
       <div className="h-[200px]">
         <Image

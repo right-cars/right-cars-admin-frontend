@@ -8,7 +8,7 @@ import {getAuctions} from "@/api/auctions";
 
 export default async function Action() {
     const auctions = await getAuctions();
-
+    console.log(auctions)
   return (
       <Container>
           <AuctionToolbar title="auction" />
