@@ -1,74 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="">
+    <list default="true" id="28d6ad90-1b3e-412b-ba7a-ff0ed6e06ded" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/auction/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/auction/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/Home/ActionsDropdown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/ActionsDropdown.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/Home/AuctionCarCard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/AuctionCarCard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/views/Home/AuctionStatusTabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/views/Home/AuctionStatusTabs.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-        <option value="TypeScript JSX File" />
-        <option value="TypeScript File" />
-        <option value="JSX File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 8
-}</component>
-  <component name="ProjectId" id="2pnncf0lflupmLhgOyfycIVVIe1" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 8
+}]]></component>
+  <component name="ProjectId" id="35nQVzeGJFUPkv6brfDUMONW0BU" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projects/Right-cars/right-cars-admin-frontend/src/components/common/InputsAuctionBlock&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Projects\\Right-cars\\right-cars-admin-frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Projects\Right-cars\right-cars-admin-frontend\src\components\common\InputsAuctionBlock" />
-      <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\views\Home" />
-      <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\modules\ToolBar" />
-      <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\api" />
-      <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\views\Auction" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Projects\right-cars\right-cars-admin-frontend\src\components\modules" />
-      <recent name="C:\Projects\cars\right-cars-admin-frontend\src\app\_not-found" />
-    </key>
-  </component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -79,119 +42,16 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ac4fbf4d-8c85-477f-a81e-76f296b100a3" name="Changes" comment="" />
-      <created>1733410792045</created>
+      <changelist id="28d6ad90-1b3e-412b-ba7a-ff0ed6e06ded" name="Changes" comment="" />
+      <created>1763743385858</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1733410792045</updated>
-      <workItem from="1733410794595" duration="2012000" />
-      <workItem from="1733733355242" duration="26695000" />
-      <workItem from="1733789518233" duration="2021000" />
-      <workItem from="1733815550288" duration="3062000" />
-      <workItem from="1733818702590" duration="2000" />
-      <workItem from="1733819072875" duration="5516000" />
-      <workItem from="1733841964289" duration="6622000" />
-      <workItem from="1733864474870" duration="7294000" />
-      <workItem from="1733900440433" duration="3983000" />
-      <workItem from="1733919629710" duration="2590000" />
-      <workItem from="1733922308278" duration="513000" />
-      <workItem from="1733923048445" duration="138000" />
-      <workItem from="1733923222774" duration="2310000" />
-      <workItem from="1734004782459" duration="20862000" />
-      <workItem from="1734119609815" duration="4167000" />
-      <workItem from="1734207243906" duration="1252000" />
-      <workItem from="1734267964608" duration="4542000" />
-      <workItem from="1734495234845" duration="9808000" />
-      <workItem from="1734551614243" duration="8788000" />
-      <workItem from="1735138821281" duration="4141000" />
-      <workItem from="1735764548502" duration="7259000" />
-      <workItem from="1735819804414" duration="68000" />
-      <workItem from="1735819894729" duration="1364000" />
-      <workItem from="1735821394391" duration="8515000" />
-      <workItem from="1735838098950" duration="14516000" />
-      <workItem from="1735919312438" duration="2144000" />
-      <workItem from="1736015795018" duration="8555000" />
-      <workItem from="1742130888040" duration="12022000" />
-      <workItem from="1742188930430" duration="4420000" />
-      <workItem from="1742818610896" duration="365000" />
-      <workItem from="1743490181697" duration="2112000" />
-      <workItem from="1743507626644" duration="32000" />
-      <workItem from="1747307988814" duration="453000" />
-      <workItem from="1747668606362" duration="9000" />
-      <workItem from="1747776892975" duration="1429000" />
-      <workItem from="1747820573323" duration="12140000" />
-      <workItem from="1747924902563" duration="826000" />
-      <workItem from="1747990310173" duration="11195000" />
-      <workItem from="1748140791751" duration="306000" />
-      <workItem from="1748192806609" duration="831000" />
-      <workItem from="1748193705411" duration="16140000" />
-      <workItem from="1748248888920" duration="42000" />
-      <workItem from="1748267416345" duration="669000" />
-      <workItem from="1748326769479" duration="1221000" />
-      <workItem from="1748334926231" duration="2071000" />
-      <workItem from="1748353497871" duration="2109000" />
-      <workItem from="1748361728021" duration="1297000" />
-      <workItem from="1748406771025" duration="4543000" />
-      <workItem from="1748463854862" duration="4328000" />
-      <workItem from="1748494734604" duration="623000" />
-      <workItem from="1748539332205" duration="603000" />
-      <workItem from="1749312915032" duration="11915000" />
-      <workItem from="1749328293845" duration="2840000" />
-      <workItem from="1749379145309" duration="13000" />
-      <workItem from="1749379455122" duration="8220000" />
-      <workItem from="1749919593816" duration="455000" />
-      <workItem from="1750055611758" duration="1396000" />
-      <workItem from="1750072099118" duration="3243000" />
-      <workItem from="1750161684874" duration="7144000" />
-      <workItem from="1750333852323" duration="2393000" />
-      <workItem from="1750400966006" duration="755000" />
-      <workItem from="1750746389617" duration="445000" />
-      <workItem from="1750748105034" duration="215000" />
-      <workItem from="1750942562904" duration="666000" />
-      <workItem from="1751282809900" duration="1050000" />
-      <workItem from="1755528018402" duration="21000" />
-      <workItem from="1755710858111" duration="52000" />
-      <workItem from="1756237636590" duration="804000" />
-      <workItem from="1756238618779" duration="62000" />
-      <workItem from="1758712003965" duration="7773000" />
-      <workItem from="1760272795885" duration="1983000" />
-      <workItem from="1760782087934" duration="1152000" />
-      <workItem from="1761302870292" duration="7869000" />
-      <workItem from="1761516890114" duration="35000" />
-      <workItem from="1761603998269" duration="595000" />
-      <workItem from="1761776885902" duration="1134000" />
-      <workItem from="1761822819219" duration="594000" />
-      <workItem from="1762543896131" duration="320000" />
-      <workItem from="1762544243349" duration="758000" />
-      <workItem from="1763374778548" duration="11740000" />
-      <workItem from="1763472832382" duration="2431000" />
-      <workItem from="1763553757555" duration="6453000" />
+      <updated>1763743385858</updated>
+      <workItem from="1763743388125" duration="16000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/components/views/Home/AuctionStatusTabs.tsx</url>
-          <line>2</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

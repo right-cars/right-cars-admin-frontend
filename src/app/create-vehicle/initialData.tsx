@@ -116,7 +116,7 @@ export const initialData = [
       },
       { id: nanoid(), label: "spare key", name: "spare_key", value: true, toggle: true },
       { id: nanoid(), label: "condition report", name: "condition_report", value: "", isFileInput: true },
-      { id: nanoid(), label: "Warranty", name: "warranty",  value: true, toggle: true  },
+      { id: nanoid(), label: "Warranty", name: "warranty",  value: true, toggle: false  },
     ],
   },
   {

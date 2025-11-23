@@ -25,7 +25,7 @@ export default async function EditVehicle({params}) {
             }
         })
     }
-
+console.log(initialCarData)
   return (
           <Container>
               <Toolbar title={`${data.make} ${data.model} ${data.year}`} variant="edit" />

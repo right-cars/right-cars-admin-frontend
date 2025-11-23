@@ -124,9 +124,9 @@ const initialCarData = [
                     { id: nanoid(), value: "Null", text: "Null" },
                 ] },
             { id: nanoid(), label: "DEKRA report", name: "dekraReport", value: "", isFileInput: true },
-            { id: nanoid(), label: "spare key", name: "spareKey", value: true, toggle: true },
+            { id: nanoid(), label: "spare key", name: "spareKey", value: false, toggle: true },
             { id: nanoid(), label: "condition report", name: "conditionReport", value: "", isFileInput: true },
-            { id: nanoid(), label: "Warranty", name: "warranty", value: true, toggle: true },
+            { id: nanoid(), label: "Warranty", name: "warranty", value: false, toggle: true },
         ],
     },
     {
