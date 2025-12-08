@@ -25,7 +25,6 @@ export default function DatePickerInput({
                         value={value}           // ← ВСЁ значение приходит из RHF
                         onChange={onChange}     // ← NextUI отдаёт DateValue, RHF хранит его
                         onBlur={onBlur}
-                        // @ts-expect-error
                         minValue={today(getLocalTimeZone())}    // (если надо ограничение — можно добавить позже)
                         // @ts-expect-error
                         errorMessage={errors?.[name]?.message || ""}
