@@ -1,6 +1,7 @@
 import { Button, Link } from "@nextui-org/react";
 import Image from "next/image";
-import ActionsDropdown from "./ActionsDropdown";
+// import ActionsDropdown from "./ActionsDropdown";
+import CardDropdown from "./CardDropdown";
 
 interface CardProps {
   id: string;
@@ -18,7 +19,7 @@ export default function CarCard(props: CardProps) {
   return (
     <li className="pb-6 bg-pureWhite flex flex-col gap-6 items-center rounded-lg border border-lightGray shadow-custom relative overflow-hidden">
       <div className="absolute top-[14px] right-[14px]">
-        <ActionsDropdown status={status} id={id} />
+        <CardDropdown status={status} id={id} />
       </div>
 
       <div className="h-[200px]">

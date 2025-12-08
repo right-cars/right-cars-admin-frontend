@@ -26,6 +26,7 @@ export default function ToggleInput({
               // errorMessage={errors[name] ? errors[name]?.message : ""}
               // @ts-expect-error
               defaultSelected={value}
+              // isSelected={value}
               // isInvalid={Boolean(errors[name])}
               endContent={
                   !readOnly && (
