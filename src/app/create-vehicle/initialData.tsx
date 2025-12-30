@@ -50,6 +50,7 @@ export const initialData = [
               { id: nanoid(), value: "Smart", text: "Smart" },
               { id: nanoid(), value: "Seat", text: "Seat" },
               { id: nanoid(), value: "Mahindra", text: "Mahindra" },
+              { id: nanoid(), value: "MG", text: "MG" },
           ] },
       { id: nanoid(), label: "km", name:"km", value: "", mask: true },
       { id: nanoid(), label: "model", name: "model", value: "" },
