@@ -6,7 +6,6 @@ import {Spinner} from "@nextui-org/spinner";
 import CustomPagination from "../../common/Pagination";
 import CarCard from "@/components/views/Home/CarCard";
 import NotFoundData from "@/components/common/NotFoundData/NotFoundData";
-// import { temporaryData } from "./temporaryData";
 import { tabs } from "./tabs";
 
 import {useCars} from "@/providers/CarsContext";
