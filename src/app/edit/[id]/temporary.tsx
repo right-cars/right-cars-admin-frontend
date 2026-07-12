@@ -63,6 +63,7 @@ export const temporary = [
               { id: nanoid(), value: "Mahindra", text: "Mahindra" },
               { id: nanoid(), value: "MG", text: "MG" },
               { id: nanoid(), value: "Jinbei", text: "Jinbei" },
+              { id: nanoid(), value: "Atul", text: "Atul" },
         ] },
       { id: nanoid(), label: "km", name:"mileageInKm", value: "", mask: true },
       { id: nanoid(), label: "model", name: "model", value: "" },
